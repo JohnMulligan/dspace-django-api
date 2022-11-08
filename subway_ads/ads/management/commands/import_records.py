@@ -23,6 +23,8 @@ class Command(BaseCommand):
 		
 		filenames=[i for i in os.listdir("scraper/outputs") if i.endswith('.json')]
 		
+		print('adding',len(filenames),'advertisements')
+		
 		#takes a string where one half is bracketed and the other is not
 		## returns the bracketed and unbracketed values, stripped down
 		def brackets(s):
@@ -47,7 +49,7 @@ class Command(BaseCommand):
 			
 			uid=f[:-5]
 			dspace_item_uri=base_dspace_url+"items/"+uid
-			dspace_iiif_uri=base_dspace_url+"server/iiif/"+uid
+			dspace_iiif_uri=base_dspace_url+"server/iiif/"+uid+"/manifest"
 			
 			owning_collection_uuid=j['owning_collection_uuid']
 			
