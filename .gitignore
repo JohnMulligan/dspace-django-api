@@ -1,0 +1,9 @@
+__pycache__/
+.DS_Store
+env.py
+outputs/
+*.db
+*.sql
+*.sqlite3
+venv/
+localsettings.py

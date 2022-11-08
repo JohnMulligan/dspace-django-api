@@ -1,0 +1,167 @@
+{
+  "id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "ID"
+  },
+  "owning_collection": {
+    "type": "table",
+    "label": "owning collection",
+    "flatlabel": "owning collection"
+  },
+  "owning_collection__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "owning collection : ID"
+  },
+  "owning_collection__uid": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Uid",
+    "flatlabel": "owning collection : Uid"
+  },
+  "spatial_coverage": {
+    "type": "table",
+    "label": "place",
+    "flatlabel": "place"
+  },
+  "spatial_coverage__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "place : ID"
+  },
+  "spatial_coverage__name_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Name EN",
+    "flatlabel": "place : Name EN"
+  },
+  "spatial_coverage__name_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Name CN",
+    "flatlabel": "place : Name CN"
+  },
+  "spatial_coverage__latitude": {
+    "type": "<class 'rest_framework.fields.DecimalField'>",
+    "label": "Latitude",
+    "flatlabel": "place : Latitude"
+  },
+  "spatial_coverage__longitude": {
+    "type": "<class 'rest_framework.fields.DecimalField'>",
+    "label": "Longitude",
+    "flatlabel": "place : Longitude"
+  },
+  "subject": {
+    "type": "table",
+    "label": "subject",
+    "flatlabel": "subject"
+  },
+  "subject__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "subject : ID"
+  },
+  "subject__name_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Name EN",
+    "flatlabel": "subject : Name EN"
+  },
+  "subject__name_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Name CN",
+    "flatlabel": "subject : Name CN"
+  },
+  "genre": {
+    "type": "table",
+    "label": "media type",
+    "flatlabel": "media type"
+  },
+  "genre__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "media type : ID"
+  },
+  "genre__name_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Name EN",
+    "flatlabel": "media type : Name EN"
+  },
+  "genre__name_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Name CN",
+    "flatlabel": "media type : Name CN"
+  },
+  "prod_cat": {
+    "type": "table",
+    "label": "product category",
+    "flatlabel": "product category"
+  },
+  "prod_cat__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "product category : ID"
+  },
+  "prod_cat__name_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Name EN",
+    "flatlabel": "product category : Name EN"
+  },
+  "prod_cat__name_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Name CN",
+    "flatlabel": "product category : Name CN"
+  },
+  "prod_type": {
+    "type": "table",
+    "label": "product type",
+    "flatlabel": "product type"
+  },
+  "prod_type__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "product type : ID"
+  },
+  "prod_type__name_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Name EN",
+    "flatlabel": "product type : Name EN"
+  },
+  "prod_type__name_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Name CN",
+    "flatlabel": "product type : Name CN"
+  },
+  "title": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Title",
+    "flatlabel": "Title"
+  },
+  "dspace_uri": {
+    "type": "<class 'rest_framework.fields.URLField'>",
+    "label": "Dspace uri",
+    "flatlabel": "Dspace uri"
+  },
+  "dspace_iiif_uri": {
+    "type": "<class 'rest_framework.fields.URLField'>",
+    "label": "Dspace iiif uri",
+    "flatlabel": "Dspace iiif uri"
+  },
+  "uid": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Uid",
+    "flatlabel": "Uid"
+  },
+  "pub_year": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "Pub year",
+    "flatlabel": "Pub year"
+  },
+  "subtitle_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Subtitle EN",
+    "flatlabel": "Subtitle EN"
+  },
+  "subtitle_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Subtitle CN",
+    "flatlabel": "Subtitle CN"
+  }
+}
