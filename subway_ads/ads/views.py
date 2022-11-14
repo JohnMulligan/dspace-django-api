@@ -34,13 +34,13 @@ except:
 ##HAVE NOT YET BUILT IN ORDER-BY FUNCTIONALITY
 class AdvertisementList(generics.GenericAPIView):
 	serializer_class=AdvertisementSerializer
-	authentication_classes=[TokenAuthentication]
-	permission_classes=[IsAuthenticated]
+# 	authentication_classes=[TokenAuthentication]
+# 	permission_classes=[IsAuthenticated]
 	def options(self,request):
 		j=options_handler('ads/advertisement_options.json',request)
 		return JsonResponse(j,safe=False)
 	def post(self,request):
-		print("+++++++\nusername:",request.auth.user)
+# 		print("+++++++\nusername:",request.auth.user)
 		try:
 			queryset=Advertisement.objects.all()
 			queryset,selected_fields,next_uri,prev_uri,results_count,error_messages=post_req(queryset,self,request,advertisement_options,retrieve_all=False)
@@ -89,11 +89,11 @@ class AdvertisementList(generics.GenericAPIView):
 ## returns its sum, average, max, min, and stdv
 class AdvertisementAggregations(generics.GenericAPIView):
 	serializer_class=AdvertisementSerializer
-	authentication_classes=[TokenAuthentication]
-	permission_classes=[IsAuthenticated]
+# 	authentication_classes=[TokenAuthentication]
+# 	permission_classes=[IsAuthenticated]
 	def post(self,request):
 		st=time.time()
-		print("+++++++\nusername:",request.auth.user)
+# 		print("+++++++\nusername:",request.auth.user)
 		params=dict(request.POST)
 		aggregations=params.get('aggregate_fields')
 		print("aggregations:",aggregations)
@@ -123,10 +123,10 @@ class AdvertisementAggregations(generics.GenericAPIView):
 #It will therefore serve as an autocomplete endpoint
 #I should make all text queries into 'or' queries
 class AdvertisementTextFieldAutoComplete(generics.GenericAPIView):
-	authentication_classes=[TokenAuthentication]
-	permission_classes=[IsAuthenticated]
+# 	authentication_classes=[TokenAuthentication]
+# 	permission_classes=[IsAuthenticated]
 	def post(self,request):
-		print("+++++++\nusername:",request.auth.user)
+# 		print("+++++++\nusername:",request.auth.user)
 		try:
 			st=time.time()
 			params=dict(request.POST)
