@@ -11,8 +11,6 @@ In other words, we scrape DSpace to put its data in an easier-to-use API that ca
 
 For this project, I'm re-using much of the code from voyages-api.
 
-Down the line, we might be able to do away with the Django middleman.
-
 ## Scraping DSpace
 
 For now, we're doing this outside of Django but I'd like to integrate it soon under advertisement/management/commands
@@ -34,25 +32,22 @@ In the "scraper" subfolder you will find
 
 ## Building the django app
 
-### 1. Set up the environment:
-
-	cd subway_ads/
-	python3 -m venv venv
-	source venv/bin/activate
-	pip3 install -r requirements.txt
-
-### 2A. If you have a db, put it in this folder alongside manage.py, requirements.txt, etc.
+	docker-compose up --build
 
 ### 2B. If you *don't* have a db to work with:
 
+Enter the django shell
+
+	docker exec -it dspace-django /bin/bash
+
 Build it like this:
 
-	python3 manage.py makemigrations
-	python3 manage.py migrate
+	python3.9 manage.py makemigrations
+	python3.9 manage.py migrate
 
 Then import your records like this:
 
-	python3 manage.py import_records.py
+	python3.9 manage.py import_records.py
 
 ... this is where I will eventually integrate the scraping into the django app. currently, i'm capturing only the following fields, and in a pretty unsophisticated manner: 
 
@@ -64,10 +59,6 @@ Then import your records like this:
 	dc.date.issued
 	dc.coverage.spatial
 	dc.subject
-
-### 3. Launch the app
-
-	python3 manage.py runserver
 
 ## Using your new Django API
 
@@ -339,7 +330,32 @@ They then select one of those valid entries ("Nonasian"), and the list filters f
     },...]
 
 
+-----
+
+April 7 note on repo test db:
 
 new admin user
 jcm10@rice.edu
 dspace2023
+
+haystack + solr supposed to be configured per: https://django-haystack.readthedocs.io/en/v3.2.1/tutorial.html#configuration
+however some funny business going on with this solr stuff... at least the pip distro with django 4.
+.... and that's not even addressing the nonsense in the dockerfile to patch this: https://github.com/django-haystack/django-haystack/issues/1200#issuecomment-372597371
+... which I should update with this asap: https://github.com/django-haystack/django-haystack/pull/1828#ref-commit-ad690bd
+
+
+	docker exec -i dspace-django-solr solr create -c dspace
+	docker exec -i dspace-django bash -c "python3.9 manage.py build_solr_schema --configure-directory=./"
+	mv django/*.xml solr/
+	docker exec -i dspace-django-solr sh -c "cp /srv/dspace-django/solr/schema.xml /var/solr/data/dspace/conf"
+	docker exec -i dspace-django bash -c "python3.9 manage.py rebuild_index --noinput"
+
+test with
+
+	docker exec -it dspace-django /bin/bash
+	
+	python3.9 manage.py shell
+	
+	from haystack.query import SearchQuerySet
+	all_results = SearchQuerySet().all()
+	all_results[0]

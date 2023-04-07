@@ -59,6 +59,8 @@ ENV PATH=/root/.local/bin:$PATH
 COPY --from=build /root/.local /root/.local
 COPY . .
 
+COPY django/hacks/solr_backend.py /root/.local/lib/python3.9/site-packages/haystack/backends/
+
 ARG GUNICORN_PORT="8000"
 ARG GUNICORN_OPTS="--reload --workers 3 --threads 2 --worker-class gthread"
 

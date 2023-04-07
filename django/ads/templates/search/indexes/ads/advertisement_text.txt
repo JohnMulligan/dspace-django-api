@@ -1,0 +1,7 @@
+{{ object.title }}
+{{ object.subtitle_EN }}
+{{ object.subtitle_CN }}
+{{ object.prod_type }}
+{{ object.prod_cat }}
+{{ object.genre }}
+{{ object.subject }}

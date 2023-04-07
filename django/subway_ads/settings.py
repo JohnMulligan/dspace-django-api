@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ads',
     'rest_framework',
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
+    'haystack',
 ]
 
 #DRF settings
@@ -92,6 +93,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'subway_ads.wsgi.application'
 
+
+HAYSTACK_CONNECTIONS = {
+	'default': {
+		'ENGINE': 'haystack.backends.solr_backend.SolrEngine',
+		'URL': 'http://dspace-django-solr:8983/solr/dspace'
+	}
+}
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
