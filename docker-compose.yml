@@ -1,0 +1,61 @@
+---
+version: "3.7"
+
+services:
+  dspace-django-solr:
+    image: "solr:8.5.2"
+    container_name: "dspace-django-solr"
+    hostname: "dspace-django-solr"
+    restart: "on-failure"
+    ports:
+      - "8983:8983"
+    networks:
+      - "dspace"
+    volumes:
+      - "solr_volume:/var/solr"
+      - "./solr:/srv/dspace-django/solr"
+    environment:
+      SOLR_JAVA_MEM: "-Xms1g -Xmx1g"
+
+  dspace-django:
+    image: "dspace-django"
+    container_name: "dspace-django"
+    hostname: "dspace-django"
+    restart: "on-failure"
+    depends_on:
+      - "dspace-django-solr"
+    ports:
+      - "8000:8000"
+    networks:
+      - "dspace"
+    volumes:
+      - "./django/:/srv/dspace-django"
+    build:
+      context: "."
+      dockerfile: "./docker/django/Dockerfile"
+
+  dspace-django-mailhog:
+    image: "mailhog/mailhog:latest"
+    container_name: "dspace-mailhog"
+    hostname: "dspace-mailhog"
+    restart: "on-failure"
+    depends_on:
+      - "dspace-django"
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+    networks:
+      - "dspace"
+    logging:
+      driver: "none"
+
+networks:
+  dspace:
+    driver: "bridge"
+    ipam:
+      driver: "default"
+      config:
+        - subnet: "172.20.0.0/16"
+
+volumes:
+  solr_volume: {}
