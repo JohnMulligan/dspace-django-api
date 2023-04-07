@@ -51,7 +51,12 @@ if results_per_page is not None:
 	next_page['href']=re.sub("(?<=size=)[0-9]+",str(results_per_page),next_page['href'])
 
 errorcount=0
-max_errors=5
+max_errors=50
+
+backofffactor=2
+backoff=10
+
+
 
 while next_page is not None:
 	try:
@@ -88,9 +93,13 @@ while next_page is not None:
 					time.sleep(2)
 		except:
 			print("ERROR: no items in",url)
+			backofffactor=backoff*backofffactor
+			auth_headers=authenticate()
 			errorcount+=1
-			time.sleep(2)
+			time.sleep(backofffactor)
 	except:
+		backofffactor=backoff*backofffactor
+		auth_headers=authenticate()
 		if errorcount<=max_errors:
 			errorcount+=1
 			print("ERROR: UNKNOWN. SKIPPING PAGE:",pagenumber)
@@ -100,4 +109,4 @@ while next_page is not None:
 		else:
 			print("ERROR: too many errors. quitting")
 			exit()
-		time.sleep(2)
+		time.sleep(backofffactor)

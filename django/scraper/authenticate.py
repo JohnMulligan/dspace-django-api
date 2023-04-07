@@ -7,7 +7,7 @@ import sys
 def xsrfreq(url,headers={}):
 	print(url,headers)
 	r=requests.request("POST",url=url,headers=headers)
-	print(r)
+	print(r.headers)
 	if 'DSPACE-XSRF-TOKEN' in r.headers:
 		dxtoken=r.headers['DSPACE-XSRF-TOKEN']
 	else:
