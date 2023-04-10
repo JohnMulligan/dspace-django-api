@@ -28,6 +28,8 @@ RUN apt-get update -y \
   && apt-get install --yes --no-upgrade --no-install-recommends \
     gcc \
     python3.9-dev \
+    curl \
+    ca-certificates \
   && apt-get clean \
   && rm -rf \
     /tmp/* \
@@ -35,6 +37,12 @@ RUN apt-get update -y \
     /var/cache/apt/* \
     /var/lib/apt/lists/* \
     /var/tmp/*
+
+RUN curl -o /usr/local/share/ca-certificates/cacert.crt "https://curl.se/ca/cacert.pem"
+COPY django/subway_ads/scholarship-rice-edu.crt /usr/local/share/ca-certificates/scholarship-rice-edu.crt
+
+RUN update-ca-certificates
+
 
 WORKDIR /srv/dspace-django
 
@@ -48,7 +56,7 @@ RUN python3.9 -m pip install --user --no-cache-dir -r ./requirements.txt
 
 # -- Release --
 
-FROM base AS release
+FROM build AS release
 
 WORKDIR /srv/dspace-django
 

@@ -6,6 +6,16 @@ import re
 ##like: ['voyage_itinerary','imp_port_voyage_begin','longitude']
 ##and: OrderedDict([('imp_principal_region_slave_dis', None), ('imp_port_voyage_begin', OrderedDict([('place', 'Baltimore'), ('longitude', '-76.6125000')]))])
 #this will drill down to the value (assuming that this path is in the ordered dict)
+
+def getornone(d,keys):
+	while keys !=[]:
+		k=keys.pop()
+		try:
+			d=d[k]
+		except:
+			return None
+	return d
+
 def bottomout(input,keychain):
 	if len(keychain)>0 and input is not None:
 		k=keychain.pop(0)

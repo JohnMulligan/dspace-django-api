@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+from subway_ads.localsettings import *
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-l!(-&sezk9&x5ores9&90xbh3gxfzxilaq$j#-&tottn0g8w6='
 STATIC_URL = "http://127.0.0.1:8000/static/"
-base_dspace_url="https://dspacedev.rice.edu"
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

@@ -5,3 +5,5 @@ venv/
 localsettings.py
 static/
 env.py
+*.crt
+*.pem
