@@ -61,5 +61,7 @@ class Advertisement(models.Model):
 	subject=models.ManyToManyField(Subject)
 	spatial_coverage=models.ManyToManyField(Place)
 	owning_collection=models.ForeignKey(Collection,null=True,on_delete=models.CASCADE)
+	iiif_enabled=models.BooleanField(default=False)
+	is_current=models.BooleanField(default=False)
 	def __str__(self):
 		return self.title
