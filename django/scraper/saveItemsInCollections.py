@@ -15,7 +15,7 @@ except:
 try:
 	results_per_page=sys.argv[2]
 except:
-	results_per_page=None
+	results_per_page=30
 
 auth_headers=authenticate()
 
@@ -53,7 +53,7 @@ if results_per_page is not None:
 errorcount=0
 max_errors=50
 
-backofffactor=2
+backofffactor=1
 backoff=10
 
 
