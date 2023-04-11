@@ -21,7 +21,7 @@ def brackets(s):
 	return bracketed,unbracketed
 			
 def create_or_update_item_from_json(item,owning_collection_uuid):
-	owning_collection=Collection.objects.all().get_or_create(uid=owning_collection_uuid)
+	owning_collection=Collection.objects.get(uid=owning_collection_uuid)
 	metadata=item.get('metadata')
 	uuid=item.get('uuid')
 	name=item.get('name')
@@ -31,11 +31,12 @@ def create_or_update_item_from_json(item,owning_collection_uuid):
 	if title is not None:
 		title=title[0]['value']
 	ad,ad_isnew=Advertisement.objects.get_or_create(uid=uuid)
-	if not ad.is_current or ad_isnew:
+	if ad_isnew or not ad.is_current:
 		ad.title=title
 		ad.dspace_uri=dspace_item_uri
 		ad.dspace_iiif_uri=dspace_iiif_uri
 		ad.is_current=True
+		ad.owning_collection=owning_collection
 		ad.save()
 	
 		dspace_mediatypes=metadata.get("dc.type.genre") or []
@@ -46,7 +47,7 @@ def create_or_update_item_from_json(item,owning_collection_uuid):
 				chinese,english=brackets(value)
 				this_media_type,this_media_type_isnew=MediaType.objects.all().get_or_create(name_CN=chinese,name_EN=english)
 				this_media_type.save()
-				ad.genre.add(this_media_type)
+				ad.genres.add(this_media_type)
 				ad.save()
 	
 		dspace_prodtypes=metadata.get("dc.subject.prodtype") or []
@@ -55,7 +56,7 @@ def create_or_update_item_from_json(item,owning_collection_uuid):
 			value=dspace_prodtype.get('value')
 			if value is not None:
 				this_prod_type,this_prod_type_isnew=ProductType.objects.all().get_or_create(name_EN=value)
-				ad.prod_type.add(this_prod_type)
+				ad.prod_types.add(this_prod_type)
 				ad.save()
 				this_prod_type.save()
 	
@@ -65,7 +66,7 @@ def create_or_update_item_from_json(item,owning_collection_uuid):
 			value=dspace_prodcat.get('value')
 			if value is not None:
 				this_prod_cat,this_prod_cat_isnew=ProductCategory.objects.all().get_or_create(name_EN=value)
-				ad.prod_cat.add(this_prod_cat)
+				ad.prod_cats.add(this_prod_cat)
 				ad.save()
 				this_prod_cat.save()
 
@@ -96,7 +97,7 @@ def create_or_update_item_from_json(item,owning_collection_uuid):
 			value=dspace_subject.get('value')
 			if value is not None:
 				this_subject,this_subject_isnew=Subject.objects.all().get_or_create(name_EN=value)
-				ad.subject.add(this_subject)
+				ad.subjects.add(this_subject)
 				ad.save()
 		if ad_isnew:
 			print("ad created",dspace_item_uri,dspace_iiif_uri)

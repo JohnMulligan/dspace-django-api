@@ -43,14 +43,18 @@ class Command(BaseCommand):
 				nextpage=j['_links'].get('next')
 				return j,nextpage
 			except:
-				print("request error",resp)
+				print("request error",resp,auth_headers,url)
 				return None,None
 
 		def getsingle(url):
 			auth_headers=authenticate()
 			resp=requests.request("GET",url=url,headers=auth_headers,verify=cert)
-			j=json.loads(resp.text)
-			return j
+			if resp.status_code==200:
+				return 200,json.loads(resp.text)
+			else:
+				if resp.status_code!=204:
+					print("request error",resp,auth_headers)
+				return resp.status_code,None
 		auth_headers=authenticate()
 	
 		#hit the items endpoint to get the firt page from the iterator
@@ -82,9 +86,47 @@ class Command(BaseCommand):
 						item_name=item.get('name')
 						print("-->",item_name,item_uuid)
 						owning_collection_href=item['_links']['owningCollection']['href']
-						owning_collection=getsingle(owning_collection_href)
-						owning_collection_uuid=owning_collection.get('uuid')
+						sc,owning_collection_json=getsingle(owning_collection_href)
+						owning_collection_uuid=owning_collection_json.get('uuid')
 						if owning_collection_uuid in targeted_collections_uuids:
+							uid=owning_collection_uuid
+							name=owning_collection_json['name']
+							uri=owning_collection_json['_links']['self']['href']
+							owning_collection,owning_collection_isnew=Collection.objects.get_or_create(
+								uid=uid,
+								name=name,
+								dspace_uri=uri
+							)
+							if owning_collection_isnew:
+								print("owning collection is new:",uid,name,uri)
+								this_collection=owning_collection
+								parent_collection_href=owning_collection_json['_links']['parentCommunity']['href']
+								bottomparentisfound=False
+								while not bottomparentisfound and errorcount <= max_errors:		
+									sc,parent_collection_dspace_json=getsingle(parent_collection_href)
+									if sc==204:
+										bottomparentisfound=True
+										print('found top of tree')
+									elif sc==200:
+										name=parent_collection_dspace_json['name']
+										uid=parent_collection_dspace_json['uuid']
+										href=parent_collection_dspace_json['_links']['self']['href']
+										print('new parent collection:',uid,name,href)
+										parent_collection,parent_collection_isnew=Collection.objects.get_or_create(
+											uid=uid,
+											name=name,
+											dspace_uri=href
+										)
+										this_collection.parent_collection=parent_collection
+										this_collection.save()
+										if not parent_collection_isnew:
+											bottomparentisfound=True
+										else:
+											this_collection=parent_collection
+											parent_collection_href=parent_collection_dspace_json['_links']['parentCommunity']['href']
+									else:
+										errorcount+=1
+										print("error fetching",parent_collection_href,sc,"error count at",errorcount)
 							local_items.create_or_update_item_from_json(item,owning_collection_uuid)
 							ad=Advertisement.objects.get(uid=item_uuid)
 							if not ad.iiif_enabled:
