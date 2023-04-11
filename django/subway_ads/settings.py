@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'haystack',
 ]
 
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
 #DRF settings
 #via https://www.django-rest-framework.org/api-guide/metadata/#setting-the-metadata-scheme
 REST_FRAMEWORK = {

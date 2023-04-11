@@ -57,7 +57,10 @@ class Language(models.Model):
 
 class Transcription(models.Model):
 	text=models.TextField(null=False,blank=False)
-	languages=models.ManyToManyField(Language,null=False,blank=False)
+	machine_generated=models.BooleanField(default=True)
+	human_reviewd=models.BooleanField(default=False)
+	languages=models.ManyToManyField(Language,blank=True)
+	advertisement=models.ForeignKey('Advertisement',null=False,blank=False,related_name='transcriptions',on_delete=models.CASCADE)
 	def __str__(self):
 		return self.text
 
@@ -69,13 +72,12 @@ class Advertisement(models.Model):
 	pub_year=models.IntegerField(null=True,blank=True)
 	subtitle_EN=models.CharField(max_length=500,null=True,blank=True)
 	subtitle_CN=models.CharField(max_length=500,null=True,blank=True)
-	prod_types=models.ManyToManyField(ProductType,null=True,blank=True)
-	prod_cats=models.ManyToManyField(ProductCategory,null=True,blank=True)
-	genres=models.ManyToManyField(MediaType,null=True,blank=True)
-	subjects=models.ManyToManyField(Subject,null=True,blank=True)
-	transcriptions=models.ManyToManyField(Transcription,null=True,blank=True)
-	spatial_coverage=models.ManyToManyField(Place,null=True,blank=True)
-	staged_photo=models.FileField(upload_to="uploads/",null=True,blank=True)
+	prod_types=models.ManyToManyField(ProductType,blank=True)
+	prod_cats=models.ManyToManyField(ProductCategory,blank=True)
+	genres=models.ManyToManyField(MediaType,blank=True)
+	subjects=models.ManyToManyField(Subject,blank=True)
+	spatial_coverage=models.ManyToManyField(Place,blank=True)
+	staged_photo=models.FileField(upload_to="staged_photos/",null=True,blank=True)
 	owning_collection=models.ForeignKey(Collection,null=True,on_delete=models.CASCADE)
 	iiif_enabled=models.BooleanField(default=False)
 	is_current=models.BooleanField(default=False)

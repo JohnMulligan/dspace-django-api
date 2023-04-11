@@ -15,3 +15,5 @@ sqlparse
 urllib3
 pysolr
 django-haystack
+django-storages
+boto3

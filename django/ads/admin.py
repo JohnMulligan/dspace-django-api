@@ -3,27 +3,45 @@ from django import forms
 from ads.models import *
 
 class ProdTypeInLine(admin.TabularInline):
-# 	model=ProductType
+	classes= ['collapse']
+	extra=0
 	model=Advertisement.prod_types.through
 
 class ProdCatInline(admin.TabularInline):
-# 	model=ProductCategory
+	classes= ['collapse']
+	extra=0
 	model=Advertisement.prod_cats.through
 
 class GenreInLine(admin.TabularInline):
-# 	model=MediaType
+	classes= ['collapse']
+	extra=0
 	model=Advertisement.genres.through
 	
 class SubjectInLine(admin.TabularInline):
-# 	model=Subject
+	classes= ['collapse']
+	extra=0
 	model=Advertisement.subjects.through
 
+class LanguageInLine(admin.TabularInline):
+	classes= ['collapse']
+	extra=0
+	model=Language
+
 class SpatialCoverageInLine(admin.TabularInline):
-# 	model=Place
+	classes= ['collapse']
+	extra=0
 	model=Advertisement.spatial_coverage.through
 
+# class TranscriptionAdmin(admin.ModelAdmin):
+# 	model=Transcription
+
 class TranscriptionInLine(admin.StackedInline):
-	model=Advertisement.transcriptions.through
+	inlines=(
+		LanguageInLine,
+	)
+	model=Transcription
+	classes= ['collapse']
+	extra=0
 
 class AdvertisementAdmin(admin.ModelAdmin):
 	inlines=(
@@ -49,3 +67,4 @@ class AdvertisementAdmin(admin.ModelAdmin):
 
 # Voyage (main section)
 admin.site.register(Advertisement, AdvertisementAdmin)
+admin.site.register(Language)
