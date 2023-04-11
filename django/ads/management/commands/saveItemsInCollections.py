@@ -11,9 +11,30 @@ from tools.nest import getornone
 from .enable_iiif_on_items import enable_iiif
 
 class Command(BaseCommand):
-	help = 'rebuilds the options flatfiles'
-	def handle(self, *args, **options):
+	
+	'''
+	
+	This script
+	1. walks through all the items in the dspace server/api/core/items endpoint
+	2. identifies those items that belong to the collections we are targeting
+	3. pulls their basic metadata and writes it to the db
+	3a. updating the item if it already exists -- unless the item is already flagged as is_current (boolean for now, could be more robust based on updated timestamps)
+	3b. creating the item if it does not
+	4. 	enabling iiif if the local db determines has it flagged as not enabled
+	
+	'''
+	
+	def add_arguments(self, parser):
+		parser.add_argument(
+			"startpage",
+			type=int,
+			nargs='?',
+			default=1,
+			help="begin at a particular page in the items list -- good for checkpointing."
+		)
 
+	def handle(self, *args, **options):
+		
 		def getpage(url):
 			auth_headers=authenticate()
 			resp=requests.request("GET",url=url,headers=auth_headers,verify=cert)
@@ -39,6 +60,10 @@ class Command(BaseCommand):
 		#print first page data
 		page_meta=first_page['page']
 		print(page_meta['totalElements'],'results =',page_meta['totalPages'],'pages at',page_meta['size'],'per page')
+		
+		startpage=options['startpage']
+		next_page['href']=re.sub("(?<=page=)[0-9]+",str(startpage),next_page['href'])
+		
 		errorcount=0
 		max_errors=50
 
