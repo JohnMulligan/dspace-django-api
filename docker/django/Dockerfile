@@ -29,6 +29,7 @@ RUN apt-get update -y \
     gcc \
     python3.9-dev \
     curl \
+    git \
     ca-certificates \
   && apt-get clean \
   && rm -rf \
@@ -53,6 +54,9 @@ RUN python3.9 -m pip install --user --no-cache-dir --upgrade \
 
 COPY django/requirements.txt .
 RUN python3.9 -m pip install --user --no-cache-dir -r ./requirements.txt
+
+# This isn't working, despite their documentation
+# RUN python3.9 -m pip install --user --no-cache-dir git+https://github.com/django-haystack/django-haystack.git#egg=django-haystack
 
 # -- Release --
 

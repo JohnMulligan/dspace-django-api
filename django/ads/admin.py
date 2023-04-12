@@ -3,32 +3,26 @@ from django import forms
 from ads.models import *
 
 class ProdTypeInLine(admin.TabularInline):
-	classes= ['collapse']
 	extra=0
 	model=Advertisement.prod_types.through
 
 class ProdCatInline(admin.TabularInline):
-	classes= ['collapse']
 	extra=0
 	model=Advertisement.prod_cats.through
 
 class GenreInLine(admin.TabularInline):
-	classes= ['collapse']
 	extra=0
 	model=Advertisement.genres.through
 	
 class SubjectInLine(admin.TabularInline):
-	classes= ['collapse']
 	extra=0
 	model=Advertisement.subjects.through
 
 class LanguageInLine(admin.TabularInline):
-	classes= ['collapse']
 	extra=0
 	model=Language
 
 class SpatialCoverageInLine(admin.TabularInline):
-	classes= ['collapse']
 	extra=0
 	model=Advertisement.spatial_coverage.through
 
@@ -40,7 +34,6 @@ class TranscriptionInLine(admin.StackedInline):
 		LanguageInLine,
 	)
 	model=Transcription
-	classes= ['collapse']
 	extra=0
 
 class AdvertisementAdmin(admin.ModelAdmin):
@@ -54,17 +47,29 @@ class AdvertisementAdmin(admin.ModelAdmin):
 	)
 	fields=[
 		'title',
+		'subtitle_EN',
+		'subtitle_CN',
 		'dspace_uri',
 		'dspace_iiif_uri',
 		'uid',
 		'pub_year',
 		'owning_collection',
-		'staged_photo'
+		'staged_photo',
+		'is_current',
+		'iiif_enabled',
+		'description_fulltext'
 	]
-	list_display=('title','pub_year')
-	search_fields=('title','pub_year')
+	list_display=('title','subtitle_EN','subtitle_CN','pub_year')
+	search_fields=('title','pub_year','uid')
 	model=Advertisement
+
+class SubjectAdmin(admin.ModelAdmin):
+	search_fields=('name_EN','name_CN')
+	list_display=('name_EN','name_CN')
 
 # Voyage (main section)
 admin.site.register(Advertisement, AdvertisementAdmin)
+admin.site.register(Collection)
 admin.site.register(Language)
+admin.site.register(Place)
+admin.site.register(Subject,SubjectAdmin)

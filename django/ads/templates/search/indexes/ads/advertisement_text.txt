@@ -1,7 +1,20 @@
 {{ object.title }}
-{{ object.subtitle_EN }}
-{{ object.subtitle_CN }}
-{{ object.prod_type }}
-{{ object.prod_cat }}
-{{ object.genre }}
-{{ object.subject }}
+
+{% for prod_type in object.prod_types.all %} 
+	{{ prod_type.name_EN }}
+	{{ prod_type.name_CN }}
+{% endfor %}
+
+{% for prod_cat in object.prod_cats.all %}
+	{{ prod_cat.name_EN }}
+	{{ prod_cat.name_CN }}
+{% endfor %}
+
+{% for subject in object.subjects.all %}
+	{{ subject.name_EN }}
+	{{ subject.name_CN }}
+{% endfor %}
+
+{% for transcription in object.transcriptions.all %}
+	{{ transcription.text }}
+{% endfor %}

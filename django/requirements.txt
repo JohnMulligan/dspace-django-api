@@ -13,7 +13,7 @@ requests
 six
 sqlparse
 urllib3
-pysolr
+pysolr 
 django-haystack
 django-storages
 boto3

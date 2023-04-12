@@ -3,12 +3,12 @@ from django.db import models
 # Create your models here.
 
 class Collection(models.Model):
-	uid=models.CharField(max_length=50,null=True,blank=True)
+	uid=models.CharField(max_length=50,null=True,blank=True,unique=True)
 	name=models.CharField(max_length=50,null=True,blank=True)
 	dspace_uri=models.URLField(max_length=250,null=True,blank=True)
 	parent_collection=models.ForeignKey('self',null=True,on_delete=models.CASCADE)
 	def __str__(self):
-		return self.uid
+		return self.name
 		
 class Place(models.Model):
 	name_EN=models.CharField(max_length=50,null=True,blank=True)
@@ -23,35 +23,50 @@ class Place(models.Model):
 		decimal_places=7,
 		null=True
 	)
+	class Meta:
+		unique_together=(['name_EN','name_CN'])
 	def __str__(self):
 		return self.name_EN
 
 class Subject(models.Model):
 	name_EN=models.CharField(max_length=50,null=True,blank=True)
 	name_CN=models.CharField(max_length=50,null=True,blank=True)
+	
+	class Meta:
+		unique_together=(['name_EN','name_CN'])
+	
 	def __str__(self):
-		return self.name_EN
-
+		
+		strjoin=[i for i in [self.name_EN,self.name_CN] if i is not None]
+		
+		return " | ".join(strjoin)
+	
 class MediaType(models.Model):
 	name_EN=models.CharField(max_length=50,null=True,blank=True)
 	name_CN=models.CharField(max_length=50,null=True,blank=True)
+	class Meta:
+		unique_together=(['name_EN','name_CN'])
 	def __str__(self):
-		return self.name_EN
+		return " | ".join([self.name_EN,self.name_CN])
 	
 class ProductCategory(models.Model):
 	name_EN=models.CharField(max_length=50,null=True,blank=True)
 	name_CN=models.CharField(max_length=50,null=True,blank=True)
+	class Meta:
+		unique_together=(['name_EN','name_CN'])
 	def __str__(self):
 		return self.name_EN
 
 class ProductType(models.Model):
 	name_EN=models.CharField(max_length=50,null=True,blank=True)
 	name_CN=models.CharField(max_length=50,null=True,blank=True)
+	class Meta:
+		unique_together=(['name_EN','name_CN'])
 	def __str__(self):
 		return self.name_EN
 
 class Language(models.Model):
-	name=models.CharField(max_length=50,null=True,blank=True)
+	name=models.CharField(max_length=50,null=True,blank=True,unique=True)
 	def __str__(self):
 		return self.name
 
@@ -70,6 +85,8 @@ class Advertisement(models.Model):
 	dspace_iiif_uri=models.URLField(max_length=250,null=True,blank=True)
 	uid=models.CharField(max_length=50,null=True,blank=True,unique=True)
 	pub_year=models.IntegerField(null=True,blank=True)
+	description=models.TextField(null=True,blank=True)
+	description_fulltext=models.TextField(null=True,blank=True)
 	subtitle_EN=models.CharField(max_length=500,null=True,blank=True)
 	subtitle_CN=models.CharField(max_length=500,null=True,blank=True)
 	prod_types=models.ManyToManyField(ProductType,blank=True)

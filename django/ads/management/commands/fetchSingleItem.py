@@ -6,6 +6,7 @@ from ads.models import *
 import time
 from subway_ads.localsettings import *
 from .tools.authenticate import authenticate
+from .tools.update_local_item import *
 
 class Command(BaseCommand):
 	help = 'rebuilds the options flatfiles'
@@ -20,11 +21,11 @@ class Command(BaseCommand):
 		)
 
 		parser.add_argument(
-			"uuid",
-			type=str,
+			"update",
+			type=bool,
 			nargs='?',
-			default=None,
-			help="uuid"
+			default=False,
+			help="update true or false"
 		)
 
 	def handle(self, *args, **options):
@@ -38,13 +39,8 @@ class Command(BaseCommand):
 			endpoint='/'+endpoint
 		else:
 			endpoint=''
-		
-		if options['uuid'] is not None:
-			uuid_str="/"+options['uuid']
-		else:
-			uuid_str=''
 				
-		concat_url=base_dspace_api_url + endpoint + uuid_str
+		concat_url=base_dspace_api_url + endpoint
 		
 		print("-------------\nfetching url\n",concat_url,"\n--------------")
 
@@ -52,3 +48,9 @@ class Command(BaseCommand):
 		print(resp)
 		if resp.status_code == 200:
 			print(json.dumps(json.loads(resp.text),indent=3))
+		
+			print(options['update'])
+		
+			if options['update']:
+				update_item_from_dspace_json(json.loads(resp.text),auth_headers)
+			

@@ -1,75 +1,113 @@
 # DSpace --> Django API project
 
-This project is an attempt to
+This project is an attempt to interface with the DSpace 7 API for
 
-* interface with the DSpace 7 API
-* allowing Django to capture its data
-* and represent that data via a DRF API
-* ... for the use of a IIIF React document viewer app
+1. Indexing existing DSpace data
+1. Providing a staging ground for users to
+	1. clean existing data
+	1. create new data
+1. Writing back to DSpace
+1. Re-present indexed data back out via a DRF REST API
+1. Making use of
+	1. Solr via django-haystack
+	1. IIIF via DSpace 7
+	1. S3 storage for the new images and data to be staged
+	1. External OCR services for auto-transcription
 
-In other words, we scrape DSpace to put its data in an easier-to-use API that can be searched by external apps.
+Our use-case here is
+	
+* we've got a legacy collection in DSpace
+* there are thousands of photos that haven't been included yet
+* the legacy data is great but it needs cleaning and rearchitecturing
+* when we're done with all of that
+	* we need a better-looking front-end
+	* but with the stability of DSpace's back-end
 
-For this project, I'm re-using much of the code from voyages-api.
+## Setup
 
-## Scraping DSpace
 
-For now, we're doing this outside of Django but I'd like to integrate it soon under advertisement/management/commands
+### A. Docker and conf files
 
-In the "scraper" subfolder you will find
+You'll need the following files for this project to run:
 
-* env_example.py
-	* rename that to env.py
-	* fill in your DSpace API credentials
-	* add the uuid's of the collections you want to capture
-* saveItemsInCollection.py
-	* run this to capture all the data in the collections specified in env.py
-	* they'll be dumped as json files with the uuid's as their filenames in outputs/
-* enableiiif_allitems_inoutputfolder.py
-	* if iiif is not enabled on those items, you can run this to switch it on
-	* it uses the filenames in outputs/ to build its uri's for its PATCH calls
+* DSpace chain.pem & .crt certs
+* Localsettings with the appropriate variables set (see localsettings.py-example)
+* R/W access to an S3 bucket
 
-... a little more documentation in that folder
+Then you should be able to just build the container: ```docker-compose --build```
 
-## Building the django app
+	n.b. there is some architectural work to be done in the docker-compose file
+		-- had to hack the solr build to make it django 4.0 compatible
+		-- the certs setup was a little too bespoke due to docker oddities
 
-	docker-compose up --build
+### Initial django setup
 
-### 2B. If you *don't* have a db to work with:
+	docker exec -i dspace-django bash -c "python3.9 manage.py collectstatic"
+	
+As of April 12, I'm just using SQLite and shipping it with this repo, so you don't *have* to run the db setup, but:
 
-Enter the django shell
+	docker exec -i dspace-django bash -c "python3.9 manage.py makemigrations"
+	docker exec -i dspace-django bash -c "python3.9 manage.py migrate"
+	docker exec -i dspace-django bash -c "python3.9 manage.py createsuperuser <yourusername>"
 
-	docker exec -it dspace-django /bin/bash
+### B. Solr
 
-Build it like this:
+Field indexing templated: ads/templates/search/indexes/ads/advertisement_text.txt
 
-	python3.9 manage.py makemigrations
-	python3.9 manage.py migrate
+	docker exec -i dspace-django-solr solr delete -c dspace
+	docker exec -i dspace-django-solr solr create -c dspace
+	docker exec -i dspace-django bash -c "python3.9 manage.py build_solr_schema" --configure-directory=./"
+	mv django/*.xml solr/
+	docker exec -i dspace-django-solr sh -c "cp /srv/dspace-django/solr/schema.xml /var/solr/data/dspace/conf"
+	docker restart dspace-django-solr
+	docker exec -i dspace-django bash -c "python3.9 manage.py rebuild_index --noinput"
 
-Then import your records like this:
+### C. Custom management commands
 
-	python3.9 manage.py import_records.py
+#### C1. Walk your DSpace server
 
-... this is where I will eventually integrate the scraping into the django app. currently, i'm capturing only the following fields, and in a pretty unsophisticated manner: 
+NOTE: Along the way, it turns on IIIF for each targeted item it finds.
 
-	dc.title
-	dc.type.genre
-	dc.subject.prodtype
-	dc.subject.prodcat
-	dc.title.subtitle
-	dc.date.issued
-	dc.coverage.spatial
-	dc.subject
+You capture:
+
+* all the collections you've enumerated in localsettings
+* all the parents of those collections, all the way up, building a tree
+* n.b. my current field parsers were thrown together pretty fast, they need a refactor once we get the schema down
+
+	docker exec -i dspace-django bash -c "python3.9 manage.py saveItemsInCollections"
+	** with an optional start page argument if you leave off at any point, e.g.
+	docker exec -i dspace-django bash -c "python3.9 manage.py saveItemsInCollections 1234"
+
+#### C2. Check or update an individual object
+
+	docker exec -i dspace-django bash -c "python3.9 manage.py fetchSingleItem ....."
+
+The naming convention there could be improved on -- it allows you to:
+
+* provide any fully-qualified entity on the DSpace API
+* get back the json of it
+* and with the option of updating it, e.g.
+
+	docker exec -i dspace-django bash -c "python3.9 manage.py fetchSingleItem /collections/6b14674d-6173-4e99-a3f1-2460dd369ea9"
+	docker exec -i dspace-django bash -c "python3.9 manage.py fetchSingleItem /items/d2c9722d-af15-4a36-a01c-c12338f26b47 True"
+	docker exec -i dspace-django bash -c "python3.9 manage.py fetchSingleItem /collections"
+	&c &c
+
+There's also an importimages script that works with S3 and a pre-existing OCR outputs folder. But that was temporary, we want this to live in the cloud when we're done and need to figure out temporary file mounts.
+
+---------
 
 ## Using your new Django API
 
-For March 30, I'm including some assets that used to be sensitive.
+April 12: I've now got Solr running and indexing every text field! Need to integrate this into a simple-search endpoint.
+
+March 30: I'm including some assets that used to be sensitive.
 
 Now that the test server has moved, there shouldn't be an issue with sharing them
 
 * sqlite db from the November scrape
 * auth token: 4cd80ea57fc54d041b7e794a9f62d5f9e309d961
 * admin login (AT 127.0.0.1:8000/admin): jcm10 SUBWAY_ADS
-
 
 ### EXAMPLE REQUESTS
 
@@ -330,32 +368,77 @@ They then select one of those valid entries ("Nonasian"), and the list filters f
     },...]
 
 
------
+------------
 
-April 7 note on repo test db:
+## April 12 notes on Data....
 
-new admin user
-jcm10@rice.edu
-dspace2023
+Broadly speaking, the project needs metadata standards and decisions about 
 
-haystack + solr supposed to be configured per: https://django-haystack.readthedocs.io/en/v3.2.1/tutorial.html#configuration
-however some funny business going on with this solr stuff... at least the pip distro with django 4.
-.... and that's not even addressing the nonsense in the dockerfile to patch this: https://github.com/django-haystack/django-haystack/issues/1200#issuecomment-372597371
-... which I should update with this asap: https://github.com/django-haystack/django-haystack/pull/1828#ref-commit-ad690bd
+Because not only do we need new entries to fit DSpace standards -- it appears we also need to bring the existing records up to those standards as well.
 
+Some examples follow.
 
-	docker exec -i dspace-django-solr solr create -c dspace
-	docker exec -i dspace-django bash -c "python3.9 manage.py build_solr_schema --configure-directory=./"
-	mv django/*.xml solr/
-	docker exec -i dspace-django-solr sh -c "cp /srv/dspace-django/solr/schema.xml /var/solr/data/dspace/conf"
-	docker exec -i dspace-django bash -c "python3.9 manage.py rebuild_index --noinput"
+### Field-splitting (existing records)
 
-test with
+Chinese and English are currently mashed together in the same field.
 
-	docker exec -it dspace-django /bin/bash
+We need to disaggregate these and then tag them properly.
+
+We should also consider using the 'authority' field here to denote what data comes from the images and which are tags layered by Brendan on top of them.
+
+E.G.,
 	
-	python3.9 manage.py shell
+	https://dspacedev.rice.edu/items/08929a0d-0ce4-409a-bf11-66b2ca69d8b7
 	
-	from haystack.query import SearchQuerySet
-	all_results = SearchQuerySet().all()
-	all_results[0]
+	"dc.subject": [
+		 {
+			"value": "Picture[\u5b9e\u7269\u63d2\u56fe/\u60c5\u5883\u63d2\u56fe]",
+			"language": null,
+			"authority": null,
+			"confidence": -1,
+			"place": 0
+		 },
+		 ...
+	 ]
+         
+	--SHOULD BE--
+	
+	"dc.subject": [
+		 {
+			"value": "Picture",
+			"language": "English",
+			"authority": null,
+			"confidence": -1,
+			"place": 0
+		 },
+		 "value": "\u5b9e\u7269\u63d2\u56fe/\u60c5\u5883\u63d2\u56fe",
+			"language": "Chinese",
+			"authority": null,
+			"confidence": -1,
+			"place": 0
+		 },
+		 ...
+	]
+
+I've performed this for the "Subjects" alias "Keywords" fields, but similar mashing is happening in Title, Place, and maybe other fields.
+
+### Multilingual fields
+
+Many advertisements contain both English and Chinese
+
+Possible convention(s)
+
+1. Provide full-English & full-Chinese translation alongside original, and tag these with "English" and "Chinese" lanaguages
+1. Leave the language field null on the original? Or tag it as multilingual?
+	
+### Transcriptions, Descriptions, Full-Text Descriptions
+
+Existing entries often have "Full-Text Description" and "Description"
+
+What fields will we be using for actual transcriptions, and what for more editorial description?
+
+### Media
+
+* media per item
+	* I'm only handling one image per item right now. But it looks like that might have to change -- I see some newspaper ads showing verso/recto
+	* https://dspacedev.rice.edu/items/00352389-3a09-4a00-afa2-50ae91b48b66
