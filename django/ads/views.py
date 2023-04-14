@@ -33,7 +33,6 @@ except:
 #LONG-FORM TABULAR ENDPOINT. PAGINATION IS A NECESSITY HERE!
 ##HAVE NOT YET BUILT IN ORDER-BY FUNCTIONALITY
 class AdvertisementList(generics.GenericAPIView):
-	serializer_class=AdvertisementSerializer
 # 	authentication_classes=[TokenAuthentication]
 # 	permission_classes=[IsAuthenticated]
 	def options(self,request):
@@ -41,54 +40,54 @@ class AdvertisementList(generics.GenericAPIView):
 		return JsonResponse(j,safe=False)
 	def post(self,request):
 # 		print("+++++++\nusername:",request.auth.user)
-		try:
-			queryset=Advertisement.objects.all()
-			queryset,selected_fields,next_uri,prev_uri,results_count,error_messages=post_req(queryset,self,request,advertisement_options,retrieve_all=False)
-			if len(error_messages)==0:
-				st=time.time()
-				headers={"next_uri":next_uri,"prev_uri":prev_uri,"total_results_count":results_count}
-				read_serializer=AdvertisementSerializer(queryset,many=True)
-				serialized=read_serializer.data
-				#if the user hasn't selected any fields (default), then get the fully-qualified var names as the full list
-				outputs=[]
-				hierarchical=request.POST.get('hierarchical')
-				if str(hierarchical).lower() in ['false','0','f','n']:
-					hierarchical=False
-				else:
-					hierarchical=True
-		
-		
-				if hierarchical==False:
-					for s in serialized:
-				
-						d={}
-						for selected_field in selected_fields:
-							#In this flattened view, the reverse relationship breaks the references to the outcome variables in the serializer
-							#not badly -- you just get some repeat, nested data -- but that's unhelpful
-							#The fix will be to make it a through table relationship
-							keychain=selected_field.split('__')
-							bottomval=bottomout(s,list(keychain))
-							d[selected_field]=bottomval
-						outputs.append(d)
-				else:
-					outputs=serialized
-		
-				resp=JsonResponse(outputs,safe=False,headers=headers)
-				resp.headers['total_results_count']=headers['total_results_count']
-				print("Internal Response Time:",time.time()-st,"\n+++++++")
-				return resp
+# 		try:
+		queryset=PublishedAdvertisement.objects.all()
+		queryset,selected_fields,next_uri,prev_uri,results_count,error_messages=post_req(queryset,self,request,advertisement_options,retrieve_all=False)
+		if len(error_messages)==0:
+			st=time.time()
+			headers={"next_uri":next_uri,"prev_uri":prev_uri,"total_results_count":results_count}
+			read_serializer=PublishedAdvertisementSerializer(queryset,many=True)
+			serialized=read_serializer.data
+			#if the user hasn't selected any fields (default), then get the fully-qualified var names as the full list
+			outputs=[]
+			hierarchical=request.POST.get('hierarchical')
+			if str(hierarchical).lower() in ['false','0','f','n']:
+				hierarchical=False
 			else:
-				print("failed\n+++++++")
-				return JsonResponse({'status':'false','message':' | '.join(error_messages)}, status=400)
-		except:
-			pass
+				hierarchical=True
+	
+	
+			if hierarchical==False:
+				for s in serialized:
+			
+					d={}
+					for selected_field in selected_fields:
+						#In this flattened view, the reverse relationship breaks the references to the outcome variables in the serializer
+						#not badly -- you just get some repeat, nested data -- but that's unhelpful
+						#The fix will be to make it a through table relationship
+						keychain=selected_field.split('__')
+						bottomval=bottomout(s,list(keychain))
+						d[selected_field]=bottomval
+					outputs.append(d)
+			else:
+				outputs=serialized
+	
+			resp=JsonResponse(outputs,safe=False,headers=headers)
+			resp.headers['total_results_count']=headers['total_results_count']
+			print("Internal Response Time:",time.time()-st,"\n+++++++")
+			return resp
+		else:
+			print("failed\n+++++++")
+			return JsonResponse({'status':'false','message':' | '.join(error_messages)}, status=400)
+# 		except:
+# 			pass
 
 
 # Basic statistics
 ## takes a numeric variable
 ## returns its sum, average, max, min, and stdv
 class AdvertisementAggregations(generics.GenericAPIView):
-	serializer_class=AdvertisementSerializer
+# 	serializer_class=AdvertisementSerializer
 # 	authentication_classes=[TokenAuthentication]
 # 	permission_classes=[IsAuthenticated]
 	def post(self,request):
@@ -97,7 +96,7 @@ class AdvertisementAggregations(generics.GenericAPIView):
 		params=dict(request.POST)
 		aggregations=params.get('aggregate_fields')
 		print("aggregations:",aggregations)
-		queryset=Advertisement.objects.all()
+		queryset=PublishedAdvertisement.objects.all()
 		
 		aggregation,selected_fields,next_uri,prev_uri,results_count,error_messages=post_req(queryset,self,request,advertisement_options,retrieve_all=True)
 		output_dict={}
@@ -123,10 +122,10 @@ class AdvertisementAggregations(generics.GenericAPIView):
 #It will therefore serve as an autocomplete endpoint
 #I should make all text queries into 'or' queries
 class AdvertisementTextFieldAutoComplete(generics.GenericAPIView):
-# 	authentication_classes=[TokenAuthentication]
-# 	permission_classes=[IsAuthenticated]
+	authentication_classes=[TokenAuthentication]
+	permission_classes=[IsAuthenticated]
 	def post(self,request):
-# 		print("+++++++\nusername:",request.auth.user)
+		print("+++++++\nusername:",request.auth.user)
 		try:
 			st=time.time()
 			params=dict(request.POST)
@@ -149,7 +148,7 @@ class AdvertisementTextFieldAutoComplete(generics.GenericAPIView):
 			candidates=[]
 			for k in klist:
 				#print(k)
-				queryset=Advertisement.objects.all()
+				queryset=PublishedAdvertisement.objects.all()
 				#print("------->",k,v,re.sub("\\\\+","",v),"<---------")
 				kwargs={'{0}__{1}'.format(k, 'icontains'):v}
 				queryset=queryset.filter(**kwargs)

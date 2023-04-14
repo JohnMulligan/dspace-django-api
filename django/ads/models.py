@@ -1,102 +1,93 @@
 from django.db import models
+from metadata.models import *
 
-# Create your models here.
-
+# DSpace Collections
 class Collection(models.Model):
-	uid=models.CharField(max_length=50,null=True,blank=True,unique=True)
-	name=models.CharField(max_length=50,null=True,blank=True)
-	dspace_uri=models.URLField(max_length=250,null=True,blank=True)
+	uid=models.CharField(max_length=50,null=False,blank=False,unique=True)
+	name=models.CharField(max_length=50,null=False,blank=True)
+	dspace_uri=models.URLField(max_length=250,null=False,blank=True)
 	parent_collection=models.ForeignKey('self',null=True,on_delete=models.CASCADE)
 	def __str__(self):
 		return self.name
-		
-class Place(models.Model):
-	name_EN=models.CharField(max_length=50,null=True,blank=True)
-	name_CN=models.CharField(max_length=50,null=True,blank=True)
-	latitude=models.DecimalField("Latitude",
-		max_digits=10,
-		decimal_places=7,
-		null=True
-	)
-	longitude=models.DecimalField("Longitude",
-		max_digits=10,
-		decimal_places=7,
-		null=True
-	)
-	class Meta:
-		unique_together=(['name_EN','name_CN'])
-	def __str__(self):
-		return self.name_EN
 
-class Subject(models.Model):
-	name_EN=models.CharField(max_length=50,null=True,blank=True)
-	name_CN=models.CharField(max_length=50,null=True,blank=True)
-	
+class AdvertisementAbstractBase(models.Model):
+	dc_contributor_funders=models.ManyToManyField(DcContributorFunder)
+	dc_date_issueds=models.ManyToManyField(DcDateIssued)
+	dc_identifier_uris=models.ManyToManyField(DcIdentifierUri)
+	chao_date_chineselunars=models.ManyToManyField(ChaoDateChineselunar)
+	dc_date_digitals=models.ManyToManyField(DcDateDigital)
+	dc_date_availables=models.ManyToManyField(DcDateAvailable)
+	dc_subject_prodcats=models.ManyToManyField(DcSubjectProdcat)
+	dc_contributor_publishers=models.ManyToManyField(DcContributorPublisher)
+	dc_type_dcmis=models.ManyToManyField(DcTypeDcmi)
+	dspace_iiif_enableds=models.ManyToManyField(DspaceIiifEnabled)
+	dc_description_provenances=models.ManyToManyField(DcDescriptionProvenance)
+	chao_company_names=models.ManyToManyField(ChaoCompanyName)
+	dc_sources=models.ManyToManyField(DcSource)
+	chao_date_minguos=models.ManyToManyField(ChaoDateMinguo)
+	chao_productagencys=models.ManyToManyField(ChaoProductagency)
+	dc_subject_adcats=models.ManyToManyField(DcSubjectAdcat)
+	chao_company_nations=models.ManyToManyField(ChaoCompanyNation)
+	dc_digitization_specificationss=models.ManyToManyField(DcDigitizationSpecifications)
+	dc_descriptions=models.ManyToManyField(DcDescription)
+	dc_relation_IsPartOfSeriess=models.ManyToManyField(DcRelationIspartofseries)
+	dc_citation_volumeNumbers=models.ManyToManyField(DcCitationVolumenumber)
+	dc_description_positions=models.ManyToManyField(DcDescriptionPosition)
+	dc_subjects=models.ManyToManyField(DcSubject)
+	dc_language_isos=models.ManyToManyField(DcLanguageIso)
+	dc_coverage_spatials=models.ManyToManyField(DcCoverageSpatial)
+	dc_format_mediums=models.ManyToManyField(DcFormatMedium)
+	dc_description_fulltexts=models.ManyToManyField(DcDescriptionFulltext)
+	dc_citation_pageNumbers=models.ManyToManyField(DcCitationPagenumber)
+	dc_rights_uris=models.ManyToManyField(DcRightsUri)
+	dc_subject_brands=models.ManyToManyField(DcSubjectBrand)
+	dc_subject_prodtypes=models.ManyToManyField(DcSubjectProdtype)
+	dc_rightss=models.ManyToManyField(DcRights)
+	dc_date_accessioneds=models.ManyToManyField(DcDateAccessioned)
+	dc_source_collections=models.ManyToManyField(DcSourceCollection)
+	dc_type_genres=models.ManyToManyField(DcTypeGenre)
+	dc_title_subtitles=models.ManyToManyField(DcTitleSubtitle)
+	dc_publishers=models.ManyToManyField(DcPublisher)
+	dc_citation_issueNumbers=models.ManyToManyField(DcCitationIssuenumber)
+	dc_titles=models.ManyToManyField(DcTitle)
+	dc_date_createds=models.ManyToManyField(DcDateCreated)
+	chao_printer_cheifeditors=models.ManyToManyField(ChaoPrinterCheifeditor)
+	chao_company_addresss=models.ManyToManyField(ChaoCompanyAddress)
+	dc_identifier_digitals=models.ManyToManyField(DcIdentifierDigital)
+	chao_contributor_printers=models.ManyToManyField(ChaoContributorPrinter)
+	pub_year=models.IntegerField(null=True,blank=True)
+	owning_collection=models.ForeignKey(Collection,null=True,blank=True,on_delete=models.CASCADE)
 	class Meta:
-		unique_together=(['name_EN','name_CN'])
-	
+		abstract = True
 	def __str__(self):
-		
-		strjoin=[i for i in [self.name_EN,self.name_CN] if i is not None]
-		
-		return " | ".join(strjoin)
-	
-class MediaType(models.Model):
-	name_EN=models.CharField(max_length=50,null=True,blank=True)
-	name_CN=models.CharField(max_length=50,null=True,blank=True)
+		label=self.dc_titles.first()
+		if label is None:
+			onestagedphoto=self.staged_photos.first()
+			if onestagedphoto is not None:
+				label=onestagedphoto.filename
+			else:
+				label=''
+		else:
+			label=label.__str__()
+		return label
 	class Meta:
-		unique_together=(['name_EN','name_CN'])
-	def __str__(self):
-		return " | ".join([self.name_EN,self.name_CN])
-	
-class ProductCategory(models.Model):
-	name_EN=models.CharField(max_length=50,null=True,blank=True)
-	name_CN=models.CharField(max_length=50,null=True,blank=True)
-	class Meta:
-		unique_together=(['name_EN','name_CN'])
-	def __str__(self):
-		return self.name_EN
+		abstract = True
 
-class ProductType(models.Model):
-	name_EN=models.CharField(max_length=50,null=True,blank=True)
-	name_CN=models.CharField(max_length=50,null=True,blank=True)
-	class Meta:
-		unique_together=(['name_EN','name_CN'])
-	def __str__(self):
-		return self.name_EN
-
-class Language(models.Model):
-	name=models.CharField(max_length=50,null=True,blank=True,unique=True)
-	def __str__(self):
-		return self.name
-
-class Transcription(models.Model):
-	text=models.TextField(null=False,blank=False)
-	machine_generated=models.BooleanField(default=True)
-	human_reviewd=models.BooleanField(default=False)
-	languages=models.ManyToManyField(Language,blank=True)
-	advertisement=models.ForeignKey('Advertisement',null=False,blank=False,related_name='transcriptions',on_delete=models.CASCADE)
-	def __str__(self):
-		return self.text
-
-class Advertisement(models.Model):
-	title=models.CharField(max_length=200,null=True,blank=True)
+class PublishedAdvertisement(AdvertisementAbstractBase):
+	uuid=models.CharField(max_length=50,null=False,blank=False,unique=True)
 	dspace_uri=models.URLField(max_length=250,null=True,blank=True)
 	dspace_iiif_uri=models.URLField(max_length=250,null=True,blank=True)
-	uid=models.CharField(max_length=50,null=True,blank=True,unique=True)
-	pub_year=models.IntegerField(null=True,blank=True)
-	description=models.TextField(null=True,blank=True)
-	description_fulltext=models.TextField(null=True,blank=True)
-	subtitle_EN=models.CharField(max_length=500,null=True,blank=True)
-	subtitle_CN=models.CharField(max_length=500,null=True,blank=True)
-	prod_types=models.ManyToManyField(ProductType,blank=True)
-	prod_cats=models.ManyToManyField(ProductCategory,blank=True)
-	genres=models.ManyToManyField(MediaType,blank=True)
-	subjects=models.ManyToManyField(Subject,blank=True)
-	spatial_coverage=models.ManyToManyField(Place,blank=True)
-	staged_photo=models.FileField(upload_to="staged_photos/",null=True,blank=True)
-	owning_collection=models.ForeignKey(Collection,null=True,on_delete=models.CASCADE)
 	iiif_enabled=models.BooleanField(default=False)
 	is_current=models.BooleanField(default=False)
+
+class StagedAdvertisement(AdvertisementAbstractBase):
+	tmp_name=models.CharField(max_length=100,null=False,blank=False,unique=True)
+	review_begun=models.BooleanField(default=False)
+	review_finished=models.BooleanField(default=False)
+
+class StagedPhoto(models.Model):
+	filename=models.CharField(max_length=100,null=False,blank=False,unique=True)
+	staged_photo=models.FileField(upload_to="staged_photos/",null=True,blank=True)
+	parent_item=models.ForeignKey(StagedAdvertisement,null=False,blank=False,on_delete=models.CASCADE,related_name='staged_photos')
 	def __str__(self):
-		return self.title
+		return self.filename

@@ -1,7 +1,7 @@
 import requests
 import json
 from django.core.management.base import BaseCommand, CommandError
-from ads.serializers import AdvertisementSerializer
+from ads.serializers import PublishedAdvertisementSerializer
 from ads.models import *
 
 class Command(BaseCommand):
@@ -13,8 +13,8 @@ class Command(BaseCommand):
 		flatfile_params=[
 			{
 				'output_filename':'ads/advertisement_options.json',
-				'serializer':AdvertisementSerializer,
-				'objectclass':Advertisement
+				'serializer':PublishedAdvertisementSerializer,
+				'objectclass':PublishedAdvertisement
 			}
 		]
 

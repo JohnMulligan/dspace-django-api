@@ -31,7 +31,7 @@ def enable_iiif(item_id,auth_headers):
 			verify=cert
 		)
 		if resp.status_code==200:
-			return(resp)
+			return(resp,auth_headers)
 		else:
 			errorcount+=1
 			auth_headers=authenticate()
@@ -49,7 +49,7 @@ def getpage(url,auth_headers):
 				print("response was:",resp,resp.text)
 				raise ValueError('failed to parse response')
 			nextpage=j['_links'].get('next')
-			return j,nextpage
+			return j,nextpage,auth_headers
 		else:
 			errorcount+=1
 			auth_headers=authenticate()

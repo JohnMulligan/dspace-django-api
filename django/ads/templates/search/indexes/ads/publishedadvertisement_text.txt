@@ -1,0 +1,930 @@
+{% for chao_company_address in object.chao_company_addresss.all %}
+	{{ chao_company_address.text_CN }}
+	{{ chao_company_address.text_EN }}
+	{{ chao_company_address.text_original}}
+{% endfor %}
+{% for chao_company_name in object.chao_company_names.all %}
+	{{ chao_company_name.text_CN }}
+	{{ chao_company_name.text_EN }}
+	{{ chao_company_name.text_original}}
+{% endfor %}
+{% for chao_company_nation in object.chao_company_nations.all %}
+	{{ chao_company_nation.text_CN }}
+	{{ chao_company_nation.text_EN }}
+	{{ chao_company_nation.text_original}}
+{% endfor %}
+{% for chao_contributor_printer in object.chao_contributor_printers.all %}
+	{{ chao_contributor_printer.text_CN }}
+	{{ chao_contributor_printer.text_EN }}
+	{{ chao_contributor_printer.text_original}}
+{% endfor %}
+{% for chao_date_chineselunar in object.chao_date_chineselunars.all %}
+	{{ chao_date_chineselunar.text_CN }}
+	{{ chao_date_chineselunar.text_EN }}
+	{{ chao_date_chineselunar.text_original}}
+{% endfor %}
+{% for chao_date_minguo in object.chao_date_minguos.all %}
+	{{ chao_date_minguo.text_CN }}
+	{{ chao_date_minguo.text_EN }}
+	{{ chao_date_minguo.text_original}}
+{% endfor %}
+{% for chao_printer_cheifeditor in object.chao_printer_cheifeditors.all %}
+	{{ chao_printer_cheifeditor.text_CN }}
+	{{ chao_printer_cheifeditor.text_EN }}
+	{{ chao_printer_cheifeditor.text_original}}
+{% endfor %}
+{% for chao_productagency in object.chao_productagencys.all %}
+	{{ chao_productagency.text_CN }}
+	{{ chao_productagency.text_EN }}
+	{{ chao_productagency.text_original}}
+{% endfor %}
+{% for dc_citation_pageNumber in object.dc_citation_pageNumbers.all %}
+	{{ dc_citation_pageNumber.text_CN }}
+	{{ dc_citation_pageNumber.text_EN }}
+	{{ dc_citation_pageNumber.text_original}}
+{% endfor %}
+{% for dc_citation_volumeNumber in object.dc_citation_volumeNumbers.all %}
+	{{ dc_citation_volumeNumber.text_CN }}
+	{{ dc_citation_volumeNumber.text_EN }}
+	{{ dc_citation_volumeNumber.text_original}}
+{% endfor %}
+{% for dc_contributor_funder in object.dc_contributor_funders.all %}
+	{{ dc_contributor_funder.text_CN }}
+	{{ dc_contributor_funder.text_EN }}
+	{{ dc_contributor_funder.text_original}}
+{% endfor %}
+{% for dc_contributor_publisher in object.dc_contributor_publishers.all %}
+	{{ dc_contributor_publisher.text_CN }}
+	{{ dc_contributor_publisher.text_EN }}
+	{{ dc_contributor_publisher.text_original}}
+{% endfor %}
+{% for dc_coverage_spatial in object.dc_coverage_spatials.all %}
+	{{ dc_coverage_spatial.text_CN }}
+	{{ dc_coverage_spatial.text_EN }}
+	{{ dc_coverage_spatial.text_original}}
+{% endfor %}
+{% for dc_date_accessioned in object.dc_date_accessioneds.all %}
+	{{ dc_date_accessioned.text_CN }}
+	{{ dc_date_accessioned.text_EN }}
+	{{ dc_date_accessioned.text_original}}
+{% endfor %}
+{% for dc_date_available in object.dc_date_availables.all %}
+	{{ dc_date_available.text_CN }}
+	{{ dc_date_available.text_EN }}
+	{{ dc_date_available.text_original}}
+{% endfor %}
+{% for dc_date_digital in object.dc_date_digitals.all %}
+	{{ dc_date_digital.text_CN }}
+	{{ dc_date_digital.text_EN }}
+	{{ dc_date_digital.text_original}}
+{% endfor %}
+{% for dc_date_issued in object.dc_date_issueds.all %}
+	{{ dc_date_issued.text_CN }}
+	{{ dc_date_issued.text_EN }}
+	{{ dc_date_issued.text_original}}
+{% endfor %}
+{% for dc_description in object.dc_descriptions.all %}
+	{{ dc_description.text_CN }}
+	{{ dc_description.text_EN }}
+	{{ dc_description.text_original}}
+{% endfor %}
+{% for dc_description_fulltext in object.dc_description_fulltexts.all %}
+	{{ dc_description_fulltext.text_CN }}
+	{{ dc_description_fulltext.text_EN }}
+	{{ dc_description_fulltext.text_original}}
+{% endfor %}
+{% for dc_description_position in object.dc_description_positions.all %}
+	{{ dc_description_position.text_CN }}
+	{{ dc_description_position.text_EN }}
+	{{ dc_description_position.text_original}}
+{% endfor %}
+{% for dc_description_provenance in object.dc_description_provenances.all %}
+	{{ dc_description_provenance.text_CN }}
+	{{ dc_description_provenance.text_EN }}
+	{{ dc_description_provenance.text_original}}
+{% endfor %}
+{% for dc_digitization_specifications in object.dc_digitization_specificationss.all %}
+	{{ dc_digitization_specifications.text_CN }}
+	{{ dc_digitization_specifications.text_EN }}
+	{{ dc_digitization_specifications.text_original}}
+{% endfor %}
+{% for dc_identifier_digital in object.dc_identifier_digitals.all %}
+	{{ dc_identifier_digital.text_CN }}
+	{{ dc_identifier_digital.text_EN }}
+	{{ dc_identifier_digital.text_original}}
+{% endfor %}
+{% for dc_identifier_uri in object.dc_identifier_uris.all %}
+	{{ dc_identifier_uri.text_CN }}
+	{{ dc_identifier_uri.text_EN }}
+	{{ dc_identifier_uri.text_original}}
+{% endfor %}
+{% for dc_language_iso in object.dc_language_isos.all %}
+	{{ dc_language_iso.text_CN }}
+	{{ dc_language_iso.text_EN }}
+	{{ dc_language_iso.text_original}}
+{% endfor %}
+{% for dc_publisher in object.dc_publishers.all %}
+	{{ dc_publisher.text_CN }}
+	{{ dc_publisher.text_EN }}
+	{{ dc_publisher.text_original}}
+{% endfor %}
+{% for dc_relation_IsPartOfSeries in object.dc_relation_IsPartOfSeriess.all %}
+	{{ dc_relation_IsPartOfSeries.text_CN }}
+	{{ dc_relation_IsPartOfSeries.text_EN }}
+	{{ dc_relation_IsPartOfSeries.text_original}}
+{% endfor %}
+{% for dc_rights in object.dc_rightss.all %}
+	{{ dc_rights.text_CN }}
+	{{ dc_rights.text_EN }}
+	{{ dc_rights.text_original}}
+{% endfor %}
+{% for dc_rights_uri in object.dc_rights_uris.all %}
+	{{ dc_rights_uri.text_CN }}
+	{{ dc_rights_uri.text_EN }}
+	{{ dc_rights_uri.text_original}}
+{% endfor %}
+{% for dc_source in object.dc_sources.all %}
+	{{ dc_source.text_CN }}
+	{{ dc_source.text_EN }}
+	{{ dc_source.text_original}}
+{% endfor %}
+{% for dc_source_collection in object.dc_source_collections.all %}
+	{{ dc_source_collection.text_CN }}
+	{{ dc_source_collection.text_EN }}
+	{{ dc_source_collection.text_original}}
+{% endfor %}
+{% for dc_subject in object.dc_subjects.all %}
+	{{ dc_subject.text_CN }}
+	{{ dc_subject.text_EN }}
+	{{ dc_subject.text_original}}
+{% endfor %}
+{% for dc_subject_adcat in object.dc_subject_adcats.all %}
+	{{ dc_subject_adcat.text_CN }}
+	{{ dc_subject_adcat.text_EN }}
+	{{ dc_subject_adcat.text_original}}
+{% endfor %}
+{% for dc_subject_brand in object.dc_subject_brands.all %}
+	{{ dc_subject_brand.text_CN }}
+	{{ dc_subject_brand.text_EN }}
+	{{ dc_subject_brand.text_original}}
+{% endfor %}
+{% for dc_subject_prodtype in object.dc_subject_prodtypes.all %}
+	{{ dc_subject_prodtype.text_CN }}
+	{{ dc_subject_prodtype.text_EN }}
+	{{ dc_subject_prodtype.text_original}}
+{% endfor %}
+{% for dc_title in object.dc_titles.all %}
+	{{ dc_title.text_CN }}
+	{{ dc_title.text_EN }}
+	{{ dc_title.text_original}}
+{% endfor %}
+{% for dc_type_dcmi in object.dc_type_dcmis.all %}
+	{{ dc_type_dcmi.text_CN }}
+	{{ dc_type_dcmi.text_EN }}
+	{{ dc_type_dcmi.text_original}}
+{% endfor %}
+{% for dc_type_genre in object.dc_type_genres.all %}
+	{{ dc_type_genre.text_CN }}
+	{{ dc_type_genre.text_EN }}
+	{{ dc_type_genre.text_original}}
+{% endfor %}
+{% for chao_company_address in object.chao_company_addresss.all %}
+	{{ chao_company_address.text_CN }}
+	{{ chao_company_address.text_EN }}
+	{{ chao_company_address.text_original}}
+{% endfor %}
+{% for chao_company_name in object.chao_company_names.all %}
+	{{ chao_company_name.text_CN }}
+	{{ chao_company_name.text_EN }}
+	{{ chao_company_name.text_original}}
+{% endfor %}
+{% for chao_company_nation in object.chao_company_nations.all %}
+	{{ chao_company_nation.text_CN }}
+	{{ chao_company_nation.text_EN }}
+	{{ chao_company_nation.text_original}}
+{% endfor %}
+{% for chao_contributor_printer in object.chao_contributor_printers.all %}
+	{{ chao_contributor_printer.text_CN }}
+	{{ chao_contributor_printer.text_EN }}
+	{{ chao_contributor_printer.text_original}}
+{% endfor %}
+{% for chao_date_minguo in object.chao_date_minguos.all %}
+	{{ chao_date_minguo.text_CN }}
+	{{ chao_date_minguo.text_EN }}
+	{{ chao_date_minguo.text_original}}
+{% endfor %}
+{% for chao_printer_cheifeditor in object.chao_printer_cheifeditors.all %}
+	{{ chao_printer_cheifeditor.text_CN }}
+	{{ chao_printer_cheifeditor.text_EN }}
+	{{ chao_printer_cheifeditor.text_original}}
+{% endfor %}
+{% for chao_productagency in object.chao_productagencys.all %}
+	{{ chao_productagency.text_CN }}
+	{{ chao_productagency.text_EN }}
+	{{ chao_productagency.text_original}}
+{% endfor %}
+{% for dc_citation_issueNumber in object.dc_citation_issueNumbers.all %}
+	{{ dc_citation_issueNumber.text_CN }}
+	{{ dc_citation_issueNumber.text_EN }}
+	{{ dc_citation_issueNumber.text_original}}
+{% endfor %}
+{% for dc_citation_pageNumber in object.dc_citation_pageNumbers.all %}
+	{{ dc_citation_pageNumber.text_CN }}
+	{{ dc_citation_pageNumber.text_EN }}
+	{{ dc_citation_pageNumber.text_original}}
+{% endfor %}
+{% for dc_citation_volumeNumber in object.dc_citation_volumeNumbers.all %}
+	{{ dc_citation_volumeNumber.text_CN }}
+	{{ dc_citation_volumeNumber.text_EN }}
+	{{ dc_citation_volumeNumber.text_original}}
+{% endfor %}
+{% for dc_contributor_funder in object.dc_contributor_funders.all %}
+	{{ dc_contributor_funder.text_CN }}
+	{{ dc_contributor_funder.text_EN }}
+	{{ dc_contributor_funder.text_original}}
+{% endfor %}
+{% for dc_contributor_publisher in object.dc_contributor_publishers.all %}
+	{{ dc_contributor_publisher.text_CN }}
+	{{ dc_contributor_publisher.text_EN }}
+	{{ dc_contributor_publisher.text_original}}
+{% endfor %}
+{% for dc_coverage_spatial in object.dc_coverage_spatials.all %}
+	{{ dc_coverage_spatial.text_CN }}
+	{{ dc_coverage_spatial.text_EN }}
+	{{ dc_coverage_spatial.text_original}}
+{% endfor %}
+{% for dc_date_accessioned in object.dc_date_accessioneds.all %}
+	{{ dc_date_accessioned.text_CN }}
+	{{ dc_date_accessioned.text_EN }}
+	{{ dc_date_accessioned.text_original}}
+{% endfor %}
+{% for dc_date_available in object.dc_date_availables.all %}
+	{{ dc_date_available.text_CN }}
+	{{ dc_date_available.text_EN }}
+	{{ dc_date_available.text_original}}
+{% endfor %}
+{% for dc_date_digital in object.dc_date_digitals.all %}
+	{{ dc_date_digital.text_CN }}
+	{{ dc_date_digital.text_EN }}
+	{{ dc_date_digital.text_original}}
+{% endfor %}
+{% for dc_date_issued in object.dc_date_issueds.all %}
+	{{ dc_date_issued.text_CN }}
+	{{ dc_date_issued.text_EN }}
+	{{ dc_date_issued.text_original}}
+{% endfor %}
+{% for dc_description in object.dc_descriptions.all %}
+	{{ dc_description.text_CN }}
+	{{ dc_description.text_EN }}
+	{{ dc_description.text_original}}
+{% endfor %}
+{% for dc_description_fulltext in object.dc_description_fulltexts.all %}
+	{{ dc_description_fulltext.text_CN }}
+	{{ dc_description_fulltext.text_EN }}
+	{{ dc_description_fulltext.text_original}}
+{% endfor %}
+{% for dc_description_position in object.dc_description_positions.all %}
+	{{ dc_description_position.text_CN }}
+	{{ dc_description_position.text_EN }}
+	{{ dc_description_position.text_original}}
+{% endfor %}
+{% for dc_description_provenance in object.dc_description_provenances.all %}
+	{{ dc_description_provenance.text_CN }}
+	{{ dc_description_provenance.text_EN }}
+	{{ dc_description_provenance.text_original}}
+{% endfor %}
+{% for dc_digitization_specifications in object.dc_digitization_specificationss.all %}
+	{{ dc_digitization_specifications.text_CN }}
+	{{ dc_digitization_specifications.text_EN }}
+	{{ dc_digitization_specifications.text_original}}
+{% endfor %}
+{% for dc_identifier_digital in object.dc_identifier_digitals.all %}
+	{{ dc_identifier_digital.text_CN }}
+	{{ dc_identifier_digital.text_EN }}
+	{{ dc_identifier_digital.text_original}}
+{% endfor %}
+{% for dc_identifier_uri in object.dc_identifier_uris.all %}
+	{{ dc_identifier_uri.text_CN }}
+	{{ dc_identifier_uri.text_EN }}
+	{{ dc_identifier_uri.text_original}}
+{% endfor %}
+{% for dc_language_iso in object.dc_language_isos.all %}
+	{{ dc_language_iso.text_CN }}
+	{{ dc_language_iso.text_EN }}
+	{{ dc_language_iso.text_original}}
+{% endfor %}
+{% for dc_publisher in object.dc_publishers.all %}
+	{{ dc_publisher.text_CN }}
+	{{ dc_publisher.text_EN }}
+	{{ dc_publisher.text_original}}
+{% endfor %}
+{% for dc_relation_IsPartOfSeries in object.dc_relation_IsPartOfSeriess.all %}
+	{{ dc_relation_IsPartOfSeries.text_CN }}
+	{{ dc_relation_IsPartOfSeries.text_EN }}
+	{{ dc_relation_IsPartOfSeries.text_original}}
+{% endfor %}
+{% for dc_rights in object.dc_rightss.all %}
+	{{ dc_rights.text_CN }}
+	{{ dc_rights.text_EN }}
+	{{ dc_rights.text_original}}
+{% endfor %}
+{% for dc_rights_uri in object.dc_rights_uris.all %}
+	{{ dc_rights_uri.text_CN }}
+	{{ dc_rights_uri.text_EN }}
+	{{ dc_rights_uri.text_original}}
+{% endfor %}
+{% for dc_source in object.dc_sources.all %}
+	{{ dc_source.text_CN }}
+	{{ dc_source.text_EN }}
+	{{ dc_source.text_original}}
+{% endfor %}
+{% for dc_source_collection in object.dc_source_collections.all %}
+	{{ dc_source_collection.text_CN }}
+	{{ dc_source_collection.text_EN }}
+	{{ dc_source_collection.text_original}}
+{% endfor %}
+{% for dc_subject in object.dc_subjects.all %}
+	{{ dc_subject.text_CN }}
+	{{ dc_subject.text_EN }}
+	{{ dc_subject.text_original}}
+{% endfor %}
+{% for dc_subject_adcat in object.dc_subject_adcats.all %}
+	{{ dc_subject_adcat.text_CN }}
+	{{ dc_subject_adcat.text_EN }}
+	{{ dc_subject_adcat.text_original}}
+{% endfor %}
+{% for dc_subject_brand in object.dc_subject_brands.all %}
+	{{ dc_subject_brand.text_CN }}
+	{{ dc_subject_brand.text_EN }}
+	{{ dc_subject_brand.text_original}}
+{% endfor %}
+{% for dc_subject_prodtype in object.dc_subject_prodtypes.all %}
+	{{ dc_subject_prodtype.text_CN }}
+	{{ dc_subject_prodtype.text_EN }}
+	{{ dc_subject_prodtype.text_original}}
+{% endfor %}
+{% for dc_title in object.dc_titles.all %}
+	{{ dc_title.text_CN }}
+	{{ dc_title.text_EN }}
+	{{ dc_title.text_original}}
+{% endfor %}
+{% for dc_type_dcmi in object.dc_type_dcmis.all %}
+	{{ dc_type_dcmi.text_CN }}
+	{{ dc_type_dcmi.text_EN }}
+	{{ dc_type_dcmi.text_original}}
+{% endfor %}
+{% for dc_type_genre in object.dc_type_genres.all %}
+	{{ dc_type_genre.text_CN }}
+	{{ dc_type_genre.text_EN }}
+	{{ dc_type_genre.text_original}}
+{% endfor %}
+{% for dspace_iiif_enabled in object.dspace_iiif_enableds.all %}
+	{{ dspace_iiif_enabled.text_CN }}
+	{{ dspace_iiif_enabled.text_EN }}
+	{{ dspace_iiif_enabled.text_original}}
+{% endfor %}
+{% for dc_coverage_spatial in object.dc_coverage_spatials.all %}
+	{{ dc_coverage_spatial.text_CN }}
+	{{ dc_coverage_spatial.text_EN }}
+	{{ dc_coverage_spatial.text_original}}
+{% endfor %}
+{% for dc_date_accessioned in object.dc_date_accessioneds.all %}
+	{{ dc_date_accessioned.text_CN }}
+	{{ dc_date_accessioned.text_EN }}
+	{{ dc_date_accessioned.text_original}}
+{% endfor %}
+{% for dc_date_available in object.dc_date_availables.all %}
+	{{ dc_date_available.text_CN }}
+	{{ dc_date_available.text_EN }}
+	{{ dc_date_available.text_original}}
+{% endfor %}
+{% for dc_date_created in object.dc_date_createds.all %}
+	{{ dc_date_created.text_CN }}
+	{{ dc_date_created.text_EN }}
+	{{ dc_date_created.text_original}}
+{% endfor %}
+{% for dc_date_issued in object.dc_date_issueds.all %}
+	{{ dc_date_issued.text_CN }}
+	{{ dc_date_issued.text_EN }}
+	{{ dc_date_issued.text_original}}
+{% endfor %}
+{% for dc_description in object.dc_descriptions.all %}
+	{{ dc_description.text_CN }}
+	{{ dc_description.text_EN }}
+	{{ dc_description.text_original}}
+{% endfor %}
+{% for dc_description_provenance in object.dc_description_provenances.all %}
+	{{ dc_description_provenance.text_CN }}
+	{{ dc_description_provenance.text_EN }}
+	{{ dc_description_provenance.text_original}}
+{% endfor %}
+{% for dc_digitization_specifications in object.dc_digitization_specificationss.all %}
+	{{ dc_digitization_specifications.text_CN }}
+	{{ dc_digitization_specifications.text_EN }}
+	{{ dc_digitization_specifications.text_original}}
+{% endfor %}
+{% for dc_format_medium in object.dc_format_mediums.all %}
+	{{ dc_format_medium.text_CN }}
+	{{ dc_format_medium.text_EN }}
+	{{ dc_format_medium.text_original}}
+{% endfor %}
+{% for dc_identifier_digital in object.dc_identifier_digitals.all %}
+	{{ dc_identifier_digital.text_CN }}
+	{{ dc_identifier_digital.text_EN }}
+	{{ dc_identifier_digital.text_original}}
+{% endfor %}
+{% for dc_identifier_uri in object.dc_identifier_uris.all %}
+	{{ dc_identifier_uri.text_CN }}
+	{{ dc_identifier_uri.text_EN }}
+	{{ dc_identifier_uri.text_original}}
+{% endfor %}
+{% for dc_publisher in object.dc_publishers.all %}
+	{{ dc_publisher.text_CN }}
+	{{ dc_publisher.text_EN }}
+	{{ dc_publisher.text_original}}
+{% endfor %}
+{% for dc_source_collection in object.dc_source_collections.all %}
+	{{ dc_source_collection.text_CN }}
+	{{ dc_source_collection.text_EN }}
+	{{ dc_source_collection.text_original}}
+{% endfor %}
+{% for dc_subject in object.dc_subjects.all %}
+	{{ dc_subject.text_CN }}
+	{{ dc_subject.text_EN }}
+	{{ dc_subject.text_original}}
+{% endfor %}
+{% for dc_subject_brand in object.dc_subject_brands.all %}
+	{{ dc_subject_brand.text_CN }}
+	{{ dc_subject_brand.text_EN }}
+	{{ dc_subject_brand.text_original}}
+{% endfor %}
+{% for dc_subject_prodcat in object.dc_subject_prodcats.all %}
+	{{ dc_subject_prodcat.text_CN }}
+	{{ dc_subject_prodcat.text_EN }}
+	{{ dc_subject_prodcat.text_original}}
+{% endfor %}
+{% for dc_subject_prodtype in object.dc_subject_prodtypes.all %}
+	{{ dc_subject_prodtype.text_CN }}
+	{{ dc_subject_prodtype.text_EN }}
+	{{ dc_subject_prodtype.text_original}}
+{% endfor %}
+{% for dc_title in object.dc_titles.all %}
+	{{ dc_title.text_CN }}
+	{{ dc_title.text_EN }}
+	{{ dc_title.text_original}}
+{% endfor %}
+{% for dc_title_subtitle in object.dc_title_subtitles.all %}
+	{{ dc_title_subtitle.text_CN }}
+	{{ dc_title_subtitle.text_EN }}
+	{{ dc_title_subtitle.text_original}}
+{% endfor %}
+{% for dc_type_dcmi in object.dc_type_dcmis.all %}
+	{{ dc_type_dcmi.text_CN }}
+	{{ dc_type_dcmi.text_EN }}
+	{{ dc_type_dcmi.text_original}}
+{% endfor %}
+{% for dc_type_genre in object.dc_type_genres.all %}
+	{{ dc_type_genre.text_CN }}
+	{{ dc_type_genre.text_EN }}
+	{{ dc_type_genre.text_original}}
+{% endfor %}
+{% for dc_coverage_spatial in object.dc_coverage_spatials.all %}
+	{{ dc_coverage_spatial.text_CN }}
+	{{ dc_coverage_spatial.text_EN }}
+	{{ dc_coverage_spatial.text_original}}
+{% endfor %}
+{% for dc_date_accessioned in object.dc_date_accessioneds.all %}
+	{{ dc_date_accessioned.text_CN }}
+	{{ dc_date_accessioned.text_EN }}
+	{{ dc_date_accessioned.text_original}}
+{% endfor %}
+{% for dc_date_available in object.dc_date_availables.all %}
+	{{ dc_date_available.text_CN }}
+	{{ dc_date_available.text_EN }}
+	{{ dc_date_available.text_original}}
+{% endfor %}
+{% for dc_date_created in object.dc_date_createds.all %}
+	{{ dc_date_created.text_CN }}
+	{{ dc_date_created.text_EN }}
+	{{ dc_date_created.text_original}}
+{% endfor %}
+{% for dc_date_issued in object.dc_date_issueds.all %}
+	{{ dc_date_issued.text_CN }}
+	{{ dc_date_issued.text_EN }}
+	{{ dc_date_issued.text_original}}
+{% endfor %}
+{% for dc_description in object.dc_descriptions.all %}
+	{{ dc_description.text_CN }}
+	{{ dc_description.text_EN }}
+	{{ dc_description.text_original}}
+{% endfor %}
+{% for dc_description_provenance in object.dc_description_provenances.all %}
+	{{ dc_description_provenance.text_CN }}
+	{{ dc_description_provenance.text_EN }}
+	{{ dc_description_provenance.text_original}}
+{% endfor %}
+{% for dc_digitization_specifications in object.dc_digitization_specificationss.all %}
+	{{ dc_digitization_specifications.text_CN }}
+	{{ dc_digitization_specifications.text_EN }}
+	{{ dc_digitization_specifications.text_original}}
+{% endfor %}
+{% for dc_format_medium in object.dc_format_mediums.all %}
+	{{ dc_format_medium.text_CN }}
+	{{ dc_format_medium.text_EN }}
+	{{ dc_format_medium.text_original}}
+{% endfor %}
+{% for dc_identifier_digital in object.dc_identifier_digitals.all %}
+	{{ dc_identifier_digital.text_CN }}
+	{{ dc_identifier_digital.text_EN }}
+	{{ dc_identifier_digital.text_original}}
+{% endfor %}
+{% for dc_identifier_uri in object.dc_identifier_uris.all %}
+	{{ dc_identifier_uri.text_CN }}
+	{{ dc_identifier_uri.text_EN }}
+	{{ dc_identifier_uri.text_original}}
+{% endfor %}
+{% for dc_language_iso in object.dc_language_isos.all %}
+	{{ dc_language_iso.text_CN }}
+	{{ dc_language_iso.text_EN }}
+	{{ dc_language_iso.text_original}}
+{% endfor %}
+{% for dc_publisher in object.dc_publishers.all %}
+	{{ dc_publisher.text_CN }}
+	{{ dc_publisher.text_EN }}
+	{{ dc_publisher.text_original}}
+{% endfor %}
+{% for dc_source_collection in object.dc_source_collections.all %}
+	{{ dc_source_collection.text_CN }}
+	{{ dc_source_collection.text_EN }}
+	{{ dc_source_collection.text_original}}
+{% endfor %}
+{% for dc_subject in object.dc_subjects.all %}
+	{{ dc_subject.text_CN }}
+	{{ dc_subject.text_EN }}
+	{{ dc_subject.text_original}}
+{% endfor %}
+{% for dc_subject_brand in object.dc_subject_brands.all %}
+	{{ dc_subject_brand.text_CN }}
+	{{ dc_subject_brand.text_EN }}
+	{{ dc_subject_brand.text_original}}
+{% endfor %}
+{% for dc_subject_prodcat in object.dc_subject_prodcats.all %}
+	{{ dc_subject_prodcat.text_CN }}
+	{{ dc_subject_prodcat.text_EN }}
+	{{ dc_subject_prodcat.text_original}}
+{% endfor %}
+{% for dc_subject_prodtype in object.dc_subject_prodtypes.all %}
+	{{ dc_subject_prodtype.text_CN }}
+	{{ dc_subject_prodtype.text_EN }}
+	{{ dc_subject_prodtype.text_original}}
+{% endfor %}
+{% for dc_title in object.dc_titles.all %}
+	{{ dc_title.text_CN }}
+	{{ dc_title.text_EN }}
+	{{ dc_title.text_original}}
+{% endfor %}
+{% for dc_title_subtitle in object.dc_title_subtitles.all %}
+	{{ dc_title_subtitle.text_CN }}
+	{{ dc_title_subtitle.text_EN }}
+	{{ dc_title_subtitle.text_original}}
+{% endfor %}
+{% for dc_type_dcmi in object.dc_type_dcmis.all %}
+	{{ dc_type_dcmi.text_CN }}
+	{{ dc_type_dcmi.text_EN }}
+	{{ dc_type_dcmi.text_original}}
+{% endfor %}
+{% for dc_type_genre in object.dc_type_genres.all %}
+	{{ dc_type_genre.text_CN }}
+	{{ dc_type_genre.text_EN }}
+	{{ dc_type_genre.text_original}}
+{% endfor %}
+{% for dspace_iiif_enabled in object.dspace_iiif_enableds.all %}
+	{{ dspace_iiif_enabled.text_CN }}
+	{{ dspace_iiif_enabled.text_EN }}
+	{{ dspace_iiif_enabled.text_original}}
+{% endfor %}
+{% for dc_coverage_spatial in object.dc_coverage_spatials.all %}
+	{{ dc_coverage_spatial.text_CN }}
+	{{ dc_coverage_spatial.text_EN }}
+	{{ dc_coverage_spatial.text_original}}
+{% endfor %}
+{% for dc_date_accessioned in object.dc_date_accessioneds.all %}
+	{{ dc_date_accessioned.text_CN }}
+	{{ dc_date_accessioned.text_EN }}
+	{{ dc_date_accessioned.text_original}}
+{% endfor %}
+{% for dc_date_available in object.dc_date_availables.all %}
+	{{ dc_date_available.text_CN }}
+	{{ dc_date_available.text_EN }}
+	{{ dc_date_available.text_original}}
+{% endfor %}
+{% for dc_date_created in object.dc_date_createds.all %}
+	{{ dc_date_created.text_CN }}
+	{{ dc_date_created.text_EN }}
+	{{ dc_date_created.text_original}}
+{% endfor %}
+{% for dc_date_issued in object.dc_date_issueds.all %}
+	{{ dc_date_issued.text_CN }}
+	{{ dc_date_issued.text_EN }}
+	{{ dc_date_issued.text_original}}
+{% endfor %}
+{% for dc_description in object.dc_descriptions.all %}
+	{{ dc_description.text_CN }}
+	{{ dc_description.text_EN }}
+	{{ dc_description.text_original}}
+{% endfor %}
+{% for dc_description_provenance in object.dc_description_provenances.all %}
+	{{ dc_description_provenance.text_CN }}
+	{{ dc_description_provenance.text_EN }}
+	{{ dc_description_provenance.text_original}}
+{% endfor %}
+{% for dc_digitization_specifications in object.dc_digitization_specificationss.all %}
+	{{ dc_digitization_specifications.text_CN }}
+	{{ dc_digitization_specifications.text_EN }}
+	{{ dc_digitization_specifications.text_original}}
+{% endfor %}
+{% for dc_format_medium in object.dc_format_mediums.all %}
+	{{ dc_format_medium.text_CN }}
+	{{ dc_format_medium.text_EN }}
+	{{ dc_format_medium.text_original}}
+{% endfor %}
+{% for dc_identifier_digital in object.dc_identifier_digitals.all %}
+	{{ dc_identifier_digital.text_CN }}
+	{{ dc_identifier_digital.text_EN }}
+	{{ dc_identifier_digital.text_original}}
+{% endfor %}
+{% for dc_identifier_uri in object.dc_identifier_uris.all %}
+	{{ dc_identifier_uri.text_CN }}
+	{{ dc_identifier_uri.text_EN }}
+	{{ dc_identifier_uri.text_original}}
+{% endfor %}
+{% for dc_language_iso in object.dc_language_isos.all %}
+	{{ dc_language_iso.text_CN }}
+	{{ dc_language_iso.text_EN }}
+	{{ dc_language_iso.text_original}}
+{% endfor %}
+{% for dc_publisher in object.dc_publishers.all %}
+	{{ dc_publisher.text_CN }}
+	{{ dc_publisher.text_EN }}
+	{{ dc_publisher.text_original}}
+{% endfor %}
+{% for dc_source_collection in object.dc_source_collections.all %}
+	{{ dc_source_collection.text_CN }}
+	{{ dc_source_collection.text_EN }}
+	{{ dc_source_collection.text_original}}
+{% endfor %}
+{% for dc_subject in object.dc_subjects.all %}
+	{{ dc_subject.text_CN }}
+	{{ dc_subject.text_EN }}
+	{{ dc_subject.text_original}}
+{% endfor %}
+{% for dc_subject_brand in object.dc_subject_brands.all %}
+	{{ dc_subject_brand.text_CN }}
+	{{ dc_subject_brand.text_EN }}
+	{{ dc_subject_brand.text_original}}
+{% endfor %}
+{% for dc_subject_prodcat in object.dc_subject_prodcats.all %}
+	{{ dc_subject_prodcat.text_CN }}
+	{{ dc_subject_prodcat.text_EN }}
+	{{ dc_subject_prodcat.text_original}}
+{% endfor %}
+{% for dc_subject_prodtype in object.dc_subject_prodtypes.all %}
+	{{ dc_subject_prodtype.text_CN }}
+	{{ dc_subject_prodtype.text_EN }}
+	{{ dc_subject_prodtype.text_original}}
+{% endfor %}
+{% for dc_title in object.dc_titles.all %}
+	{{ dc_title.text_CN }}
+	{{ dc_title.text_EN }}
+	{{ dc_title.text_original}}
+{% endfor %}
+{% for dc_title_subtitle in object.dc_title_subtitles.all %}
+	{{ dc_title_subtitle.text_CN }}
+	{{ dc_title_subtitle.text_EN }}
+	{{ dc_title_subtitle.text_original}}
+{% endfor %}
+{% for dc_type_dcmi in object.dc_type_dcmis.all %}
+	{{ dc_type_dcmi.text_CN }}
+	{{ dc_type_dcmi.text_EN }}
+	{{ dc_type_dcmi.text_original}}
+{% endfor %}
+{% for dc_type_genre in object.dc_type_genres.all %}
+	{{ dc_type_genre.text_CN }}
+	{{ dc_type_genre.text_EN }}
+	{{ dc_type_genre.text_original}}
+{% endfor %}
+{% for dc_coverage_spatial in object.dc_coverage_spatials.all %}
+	{{ dc_coverage_spatial.text_CN }}
+	{{ dc_coverage_spatial.text_EN }}
+	{{ dc_coverage_spatial.text_original}}
+{% endfor %}
+{% for dc_date_accessioned in object.dc_date_accessioneds.all %}
+	{{ dc_date_accessioned.text_CN }}
+	{{ dc_date_accessioned.text_EN }}
+	{{ dc_date_accessioned.text_original}}
+{% endfor %}
+{% for dc_date_available in object.dc_date_availables.all %}
+	{{ dc_date_available.text_CN }}
+	{{ dc_date_available.text_EN }}
+	{{ dc_date_available.text_original}}
+{% endfor %}
+{% for dc_date_created in object.dc_date_createds.all %}
+	{{ dc_date_created.text_CN }}
+	{{ dc_date_created.text_EN }}
+	{{ dc_date_created.text_original}}
+{% endfor %}
+{% for dc_date_issued in object.dc_date_issueds.all %}
+	{{ dc_date_issued.text_CN }}
+	{{ dc_date_issued.text_EN }}
+	{{ dc_date_issued.text_original}}
+{% endfor %}
+{% for dc_description in object.dc_descriptions.all %}
+	{{ dc_description.text_CN }}
+	{{ dc_description.text_EN }}
+	{{ dc_description.text_original}}
+{% endfor %}
+{% for dc_description_provenance in object.dc_description_provenances.all %}
+	{{ dc_description_provenance.text_CN }}
+	{{ dc_description_provenance.text_EN }}
+	{{ dc_description_provenance.text_original}}
+{% endfor %}
+{% for dc_digitization_specifications in object.dc_digitization_specificationss.all %}
+	{{ dc_digitization_specifications.text_CN }}
+	{{ dc_digitization_specifications.text_EN }}
+	{{ dc_digitization_specifications.text_original}}
+{% endfor %}
+{% for dc_format_medium in object.dc_format_mediums.all %}
+	{{ dc_format_medium.text_CN }}
+	{{ dc_format_medium.text_EN }}
+	{{ dc_format_medium.text_original}}
+{% endfor %}
+{% for dc_identifier_digital in object.dc_identifier_digitals.all %}
+	{{ dc_identifier_digital.text_CN }}
+	{{ dc_identifier_digital.text_EN }}
+	{{ dc_identifier_digital.text_original}}
+{% endfor %}
+{% for dc_identifier_uri in object.dc_identifier_uris.all %}
+	{{ dc_identifier_uri.text_CN }}
+	{{ dc_identifier_uri.text_EN }}
+	{{ dc_identifier_uri.text_original}}
+{% endfor %}
+{% for dc_publisher in object.dc_publishers.all %}
+	{{ dc_publisher.text_CN }}
+	{{ dc_publisher.text_EN }}
+	{{ dc_publisher.text_original}}
+{% endfor %}
+{% for dc_source_collection in object.dc_source_collections.all %}
+	{{ dc_source_collection.text_CN }}
+	{{ dc_source_collection.text_EN }}
+	{{ dc_source_collection.text_original}}
+{% endfor %}
+{% for dc_subject in object.dc_subjects.all %}
+	{{ dc_subject.text_CN }}
+	{{ dc_subject.text_EN }}
+	{{ dc_subject.text_original}}
+{% endfor %}
+{% for dc_subject_brand in object.dc_subject_brands.all %}
+	{{ dc_subject_brand.text_CN }}
+	{{ dc_subject_brand.text_EN }}
+	{{ dc_subject_brand.text_original}}
+{% endfor %}
+{% for dc_subject_prodcat in object.dc_subject_prodcats.all %}
+	{{ dc_subject_prodcat.text_CN }}
+	{{ dc_subject_prodcat.text_EN }}
+	{{ dc_subject_prodcat.text_original}}
+{% endfor %}
+{% for dc_subject_prodtype in object.dc_subject_prodtypes.all %}
+	{{ dc_subject_prodtype.text_CN }}
+	{{ dc_subject_prodtype.text_EN }}
+	{{ dc_subject_prodtype.text_original}}
+{% endfor %}
+{% for dc_title in object.dc_titles.all %}
+	{{ dc_title.text_CN }}
+	{{ dc_title.text_EN }}
+	{{ dc_title.text_original}}
+{% endfor %}
+{% for dc_title_subtitle in object.dc_title_subtitles.all %}
+	{{ dc_title_subtitle.text_CN }}
+	{{ dc_title_subtitle.text_EN }}
+	{{ dc_title_subtitle.text_original}}
+{% endfor %}
+{% for dc_type_dcmi in object.dc_type_dcmis.all %}
+	{{ dc_type_dcmi.text_CN }}
+	{{ dc_type_dcmi.text_EN }}
+	{{ dc_type_dcmi.text_original}}
+{% endfor %}
+{% for dc_type_genre in object.dc_type_genres.all %}
+	{{ dc_type_genre.text_CN }}
+	{{ dc_type_genre.text_EN }}
+	{{ dc_type_genre.text_original}}
+{% endfor %}
+{% for dc_coverage_spatial in object.dc_coverage_spatials.all %}
+	{{ dc_coverage_spatial.text_CN }}
+	{{ dc_coverage_spatial.text_EN }}
+	{{ dc_coverage_spatial.text_original}}
+{% endfor %}
+{% for dc_date_accessioned in object.dc_date_accessioneds.all %}
+	{{ dc_date_accessioned.text_CN }}
+	{{ dc_date_accessioned.text_EN }}
+	{{ dc_date_accessioned.text_original}}
+{% endfor %}
+{% for dc_date_available in object.dc_date_availables.all %}
+	{{ dc_date_available.text_CN }}
+	{{ dc_date_available.text_EN }}
+	{{ dc_date_available.text_original}}
+{% endfor %}
+{% for dc_date_created in object.dc_date_createds.all %}
+	{{ dc_date_created.text_CN }}
+	{{ dc_date_created.text_EN }}
+	{{ dc_date_created.text_original}}
+{% endfor %}
+{% for dc_date_issued in object.dc_date_issueds.all %}
+	{{ dc_date_issued.text_CN }}
+	{{ dc_date_issued.text_EN }}
+	{{ dc_date_issued.text_original}}
+{% endfor %}
+{% for dc_description in object.dc_descriptions.all %}
+	{{ dc_description.text_CN }}
+	{{ dc_description.text_EN }}
+	{{ dc_description.text_original}}
+{% endfor %}
+{% for dc_description_provenance in object.dc_description_provenances.all %}
+	{{ dc_description_provenance.text_CN }}
+	{{ dc_description_provenance.text_EN }}
+	{{ dc_description_provenance.text_original}}
+{% endfor %}
+{% for dc_digitization_specifications in object.dc_digitization_specificationss.all %}
+	{{ dc_digitization_specifications.text_CN }}
+	{{ dc_digitization_specifications.text_EN }}
+	{{ dc_digitization_specifications.text_original}}
+{% endfor %}
+{% for dc_format_medium in object.dc_format_mediums.all %}
+	{{ dc_format_medium.text_CN }}
+	{{ dc_format_medium.text_EN }}
+	{{ dc_format_medium.text_original}}
+{% endfor %}
+{% for dc_identifier_digital in object.dc_identifier_digitals.all %}
+	{{ dc_identifier_digital.text_CN }}
+	{{ dc_identifier_digital.text_EN }}
+	{{ dc_identifier_digital.text_original}}
+{% endfor %}
+{% for dc_identifier_uri in object.dc_identifier_uris.all %}
+	{{ dc_identifier_uri.text_CN }}
+	{{ dc_identifier_uri.text_EN }}
+	{{ dc_identifier_uri.text_original}}
+{% endfor %}
+{% for dc_language_iso in object.dc_language_isos.all %}
+	{{ dc_language_iso.text_CN }}
+	{{ dc_language_iso.text_EN }}
+	{{ dc_language_iso.text_original}}
+{% endfor %}
+{% for dc_publisher in object.dc_publishers.all %}
+	{{ dc_publisher.text_CN }}
+	{{ dc_publisher.text_EN }}
+	{{ dc_publisher.text_original}}
+{% endfor %}
+{% for dc_source_collection in object.dc_source_collections.all %}
+	{{ dc_source_collection.text_CN }}
+	{{ dc_source_collection.text_EN }}
+	{{ dc_source_collection.text_original}}
+{% endfor %}
+{% for dc_subject in object.dc_subjects.all %}
+	{{ dc_subject.text_CN }}
+	{{ dc_subject.text_EN }}
+	{{ dc_subject.text_original}}
+{% endfor %}
+{% for dc_subject_brand in object.dc_subject_brands.all %}
+	{{ dc_subject_brand.text_CN }}
+	{{ dc_subject_brand.text_EN }}
+	{{ dc_subject_brand.text_original}}
+{% endfor %}
+{% for dc_subject_prodcat in object.dc_subject_prodcats.all %}
+	{{ dc_subject_prodcat.text_CN }}
+	{{ dc_subject_prodcat.text_EN }}
+	{{ dc_subject_prodcat.text_original}}
+{% endfor %}
+{% for dc_subject_prodtype in object.dc_subject_prodtypes.all %}
+	{{ dc_subject_prodtype.text_CN }}
+	{{ dc_subject_prodtype.text_EN }}
+	{{ dc_subject_prodtype.text_original}}
+{% endfor %}
+{% for dc_title in object.dc_titles.all %}
+	{{ dc_title.text_CN }}
+	{{ dc_title.text_EN }}
+	{{ dc_title.text_original}}
+{% endfor %}
+{% for dc_title_subtitle in object.dc_title_subtitles.all %}
+	{{ dc_title_subtitle.text_CN }}
+	{{ dc_title_subtitle.text_EN }}
+	{{ dc_title_subtitle.text_original}}
+{% endfor %}
+{% for dc_type_dcmi in object.dc_type_dcmis.all %}
+	{{ dc_type_dcmi.text_CN }}
+	{{ dc_type_dcmi.text_EN }}
+	{{ dc_type_dcmi.text_original}}
+{% endfor %}
+{% for dc_type_genre in object.dc_type_genres.all %}
+	{{ dc_type_genre.text_CN }}
+	{{ dc_type_genre.text_EN }}
+	{{ dc_type_genre.text_original}}
+{% endfor %}

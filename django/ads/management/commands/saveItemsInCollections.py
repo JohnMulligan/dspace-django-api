@@ -27,11 +27,18 @@ class Command(BaseCommand):
 	
 	def add_arguments(self, parser):
 		parser.add_argument(
-			"startpage",
+			"--startpage",
 			type=int,
 			nargs='?',
 			default=1,
-			help="begin at a particular page in the items list -- good for checkpointing."
+			help="INT: begin at a particular page in the items list. good for checkpointing. default=1"
+		)
+		parser.add_argument(
+			"--enable_iiif",
+			type=bool,
+			nargs='?',
+			default=False,
+			help="Boolean: enable iiif on items as they are discovered. it's slow on the dpsace side. default=False"
 		)
 
 	def handle(self, *args, **options):
@@ -40,7 +47,7 @@ class Command(BaseCommand):
 	
 		#hit the items endpoint to get the firt page from the iterator
 		first_url= base_dspace_api_url + "core/items"
-		first_page,next_page=remote_items.getpage(first_url,auth_headers)
+		first_page,next_page,auth_headers=remote_items.getpage(first_url,auth_headers)
 
 		#print first page data
 		page_meta=first_page['page']
@@ -49,22 +56,27 @@ class Command(BaseCommand):
 		startpage=options['startpage']
 		next_page['href']=re.sub("(?<=page=)[0-9]+",str(startpage),next_page['href'])
 		
+		enable_iiif=options['enable_iiif']
+		
 		errorcount=0
 		max_errors=5
-		
+				
 		while next_page is not None:
 			next_url=next_page['href']
-			item_page,next_page=remote_items.getpage(next_url,auth_headers)
+			item_page,next_page,auth_headers=remote_items.getpage(next_url,auth_headers)
 			pagenumber=item_page['page']['number']
 			print("page",pagenumber,next_url)
 			
 			for item_json in item_page['_embedded']['items']:
-				ad=local_items.update_item_from_dspace_json(item_json,auth_headers)
+				ad,auth_headers=local_items.update_item_from_dspace_json(item_json,auth_headers)
+				if auth_headers is None:
+					auth_headers=authenticate()
 				#the above function returns an ad if it's in the collections we're looking for
 				#if not, it returns None
-				if ad is not None:
+				
+				if ad is not None and enable_iiif:
 					if not ad.iiif_enabled:
-						resp=remote_items.enable_iiif(ad.uid,auth_headers)
+						resp,auth_headers=remote_items.enable_iiif(ad.uuid,auth_headers)
 						if resp.status_code==200:
 							print('iiif enabled')
 						else:

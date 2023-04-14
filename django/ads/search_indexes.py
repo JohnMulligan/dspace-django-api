@@ -7,7 +7,7 @@ class AdvertisementIndex(indexes.SearchIndex, indexes.Indexable):
     text = indexes.CharField(document=True, use_template=True)
 
     def get_model(self):
-        return Advertisement
+        return PublishedAdvertisement
 
     def index_queryset(self, using=None):
         """Used when the entire index for model is updated."""

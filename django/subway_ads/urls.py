@@ -22,5 +22,5 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
 	path('advertisement/',include('ads.urls')),
-	path('auth_endpoint/', views.obtain_auth_token)
+	path('auth_endpoint/', views.obtain_auth_token),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

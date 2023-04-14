@@ -5,7 +5,7 @@ import os
 import sys
 import re
 from django.core.management.base import BaseCommand, CommandError
-
+from metadata.models import *
 
 class Command(BaseCommand):
 	
@@ -47,16 +47,25 @@ class Command(BaseCommand):
 			transcriptionfilepath=os.path.join(transcriptionsdir,transcriptionfilename)
 			d=open(transcriptionfilepath,'r')
 			transcription_text=d.read()
-			d.close()
-			ad=Advertisement.objects.create(
-				title=imagefilename
-			)
-			ad.save()
-			f=open(imagefilepath,'rb+')
-			ad.staged_photo.save(imagefilename,ContentFile(f.read()))
-			print(ad)
-			tr=Transcription.objects.create(
-				advertisement=ad,
-				text=transcription_text
+			
+			tr=DcDescriptionFulltext.objects.create(
+				text_original=transcription_text
 			)
 			tr.save()
+			
+			d.close()
+			ad,ad_isnew=StagedAdvertisement.objects.get_or_create(
+				tmp_name=imagefilename
+			)
+			ad.save()
+			ad.dc_description_fulltexts.add(tr)
+			ad.save()
+			f=open(imagefilepath,'rb+')
+			stagedphoto=StagedPhoto.objects.create(
+				filename=imagefilename,
+				parent_item=ad
+			)
+			stagedphoto.save()
+			stagedphoto.staged_photo.save(imagefilename,ContentFile(f.read()))
+			stagedphoto.save()
+			print(ad)

@@ -4,135 +4,1115 @@
     "label": "ID",
     "flatlabel": "ID"
   },
-  "owning_collection": {
+  "chao_date_chineselunars": {
     "type": "table",
-    "label": "owning collection",
-    "flatlabel": "owning collection"
+    "label": "chao.date.chineselunar",
+    "flatlabel": "chao.date.chineselunar"
   },
-  "owning_collection__id": {
+  "chao_date_chineselunars__id": {
     "type": "<class 'rest_framework.fields.IntegerField'>",
     "label": "ID",
-    "flatlabel": "owning collection : ID"
+    "flatlabel": "chao.date.chineselunar : ID"
   },
-  "owning_collection__uid": {
+  "chao_date_chineselunars__text_original": {
     "type": "<class 'rest_framework.fields.CharField'>",
-    "label": "Uid",
-    "flatlabel": "owning collection : Uid"
+    "label": "Text original",
+    "flatlabel": "chao.date.chineselunar : Text original"
   },
-  "spatial_coverage": {
+  "chao_date_chineselunars__text_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text EN",
+    "flatlabel": "chao.date.chineselunar : Text EN"
+  },
+  "chao_date_chineselunars__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "chao.date.chineselunar : Text CN"
+  },
+  "chao_company_addresss": {
     "type": "table",
-    "label": "place",
-    "flatlabel": "place"
+    "label": "chao.company.address",
+    "flatlabel": "chao.company.address"
   },
-  "spatial_coverage__id": {
+  "chao_company_addresss__id": {
     "type": "<class 'rest_framework.fields.IntegerField'>",
     "label": "ID",
-    "flatlabel": "place : ID"
+    "flatlabel": "chao.company.address : ID"
   },
-  "spatial_coverage__name_EN": {
+  "chao_company_addresss__text_original": {
     "type": "<class 'rest_framework.fields.CharField'>",
-    "label": "Name EN",
-    "flatlabel": "place : Name EN"
+    "label": "Text original",
+    "flatlabel": "chao.company.address : Text original"
   },
-  "spatial_coverage__name_CN": {
+  "chao_company_addresss__text_EN": {
     "type": "<class 'rest_framework.fields.CharField'>",
-    "label": "Name CN",
-    "flatlabel": "place : Name CN"
+    "label": "Text EN",
+    "flatlabel": "chao.company.address : Text EN"
   },
-  "spatial_coverage__latitude": {
-    "type": "<class 'rest_framework.fields.DecimalField'>",
-    "label": "Latitude",
-    "flatlabel": "place : Latitude"
+  "chao_company_addresss__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "chao.company.address : Text CN"
   },
-  "spatial_coverage__longitude": {
-    "type": "<class 'rest_framework.fields.DecimalField'>",
-    "label": "Longitude",
-    "flatlabel": "place : Longitude"
-  },
-  "subject": {
+  "chao_company_names": {
     "type": "table",
-    "label": "subject",
-    "flatlabel": "subject"
+    "label": "chao.company.name",
+    "flatlabel": "chao.company.name"
   },
-  "subject__id": {
+  "chao_company_names__id": {
     "type": "<class 'rest_framework.fields.IntegerField'>",
     "label": "ID",
-    "flatlabel": "subject : ID"
+    "flatlabel": "chao.company.name : ID"
   },
-  "subject__name_EN": {
+  "chao_company_names__text_original": {
     "type": "<class 'rest_framework.fields.CharField'>",
-    "label": "Name EN",
-    "flatlabel": "subject : Name EN"
+    "label": "Text original",
+    "flatlabel": "chao.company.name : Text original"
   },
-  "subject__name_CN": {
+  "chao_company_names__text_EN": {
     "type": "<class 'rest_framework.fields.CharField'>",
-    "label": "Name CN",
-    "flatlabel": "subject : Name CN"
+    "label": "Text EN",
+    "flatlabel": "chao.company.name : Text EN"
   },
-  "genre": {
+  "chao_company_names__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "chao.company.name : Text CN"
+  },
+  "chao_company_nations": {
     "type": "table",
-    "label": "media type",
-    "flatlabel": "media type"
+    "label": "chao.company.nation",
+    "flatlabel": "chao.company.nation"
   },
-  "genre__id": {
+  "chao_company_nations__id": {
     "type": "<class 'rest_framework.fields.IntegerField'>",
     "label": "ID",
-    "flatlabel": "media type : ID"
+    "flatlabel": "chao.company.nation : ID"
   },
-  "genre__name_EN": {
+  "chao_company_nations__text_original": {
     "type": "<class 'rest_framework.fields.CharField'>",
-    "label": "Name EN",
-    "flatlabel": "media type : Name EN"
+    "label": "Text original",
+    "flatlabel": "chao.company.nation : Text original"
   },
-  "genre__name_CN": {
+  "chao_company_nations__text_EN": {
     "type": "<class 'rest_framework.fields.CharField'>",
-    "label": "Name CN",
-    "flatlabel": "media type : Name CN"
+    "label": "Text EN",
+    "flatlabel": "chao.company.nation : Text EN"
   },
-  "prod_cat": {
+  "chao_company_nations__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "chao.company.nation : Text CN"
+  },
+  "chao_contributor_printers": {
     "type": "table",
-    "label": "product category",
-    "flatlabel": "product category"
+    "label": "chao.contributor.printer",
+    "flatlabel": "chao.contributor.printer"
   },
-  "prod_cat__id": {
+  "chao_contributor_printers__id": {
     "type": "<class 'rest_framework.fields.IntegerField'>",
     "label": "ID",
-    "flatlabel": "product category : ID"
+    "flatlabel": "chao.contributor.printer : ID"
   },
-  "prod_cat__name_EN": {
+  "chao_contributor_printers__text_original": {
     "type": "<class 'rest_framework.fields.CharField'>",
-    "label": "Name EN",
-    "flatlabel": "product category : Name EN"
+    "label": "Text original",
+    "flatlabel": "chao.contributor.printer : Text original"
   },
-  "prod_cat__name_CN": {
+  "chao_contributor_printers__text_EN": {
     "type": "<class 'rest_framework.fields.CharField'>",
-    "label": "Name CN",
-    "flatlabel": "product category : Name CN"
+    "label": "Text EN",
+    "flatlabel": "chao.contributor.printer : Text EN"
   },
-  "prod_type": {
+  "chao_contributor_printers__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "chao.contributor.printer : Text CN"
+  },
+  "chao_date_minguos": {
     "type": "table",
-    "label": "product type",
-    "flatlabel": "product type"
+    "label": "chao.date.minguo",
+    "flatlabel": "chao.date.minguo"
   },
-  "prod_type__id": {
+  "chao_date_minguos__id": {
     "type": "<class 'rest_framework.fields.IntegerField'>",
     "label": "ID",
-    "flatlabel": "product type : ID"
+    "flatlabel": "chao.date.minguo : ID"
   },
-  "prod_type__name_EN": {
+  "chao_date_minguos__text_original": {
     "type": "<class 'rest_framework.fields.CharField'>",
-    "label": "Name EN",
-    "flatlabel": "product type : Name EN"
+    "label": "Text original",
+    "flatlabel": "chao.date.minguo : Text original"
   },
-  "prod_type__name_CN": {
+  "chao_date_minguos__text_EN": {
     "type": "<class 'rest_framework.fields.CharField'>",
-    "label": "Name CN",
-    "flatlabel": "product type : Name CN"
+    "label": "Text EN",
+    "flatlabel": "chao.date.minguo : Text EN"
   },
-  "title": {
+  "chao_date_minguos__text_CN": {
     "type": "<class 'rest_framework.fields.CharField'>",
-    "label": "Title",
-    "flatlabel": "Title"
+    "label": "Text CN",
+    "flatlabel": "chao.date.minguo : Text CN"
+  },
+  "chao_printer_cheifeditors": {
+    "type": "table",
+    "label": "chao.printer.cheifeditor",
+    "flatlabel": "chao.printer.cheifeditor"
+  },
+  "chao_printer_cheifeditors__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "chao.printer.cheifeditor : ID"
+  },
+  "chao_printer_cheifeditors__text_original": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text original",
+    "flatlabel": "chao.printer.cheifeditor : Text original"
+  },
+  "chao_printer_cheifeditors__text_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text EN",
+    "flatlabel": "chao.printer.cheifeditor : Text EN"
+  },
+  "chao_printer_cheifeditors__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "chao.printer.cheifeditor : Text CN"
+  },
+  "chao_productagencys": {
+    "type": "table",
+    "label": "chao.productagency",
+    "flatlabel": "chao.productagency"
+  },
+  "chao_productagencys__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "chao.productagency : ID"
+  },
+  "chao_productagencys__text_original": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text original",
+    "flatlabel": "chao.productagency : Text original"
+  },
+  "chao_productagencys__text_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text EN",
+    "flatlabel": "chao.productagency : Text EN"
+  },
+  "chao_productagencys__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "chao.productagency : Text CN"
+  },
+  "dc_citation_issueNumbers": {
+    "type": "table",
+    "label": "dc.citation.issueNumber",
+    "flatlabel": "dc.citation.issueNumber"
+  },
+  "dc_citation_issueNumbers__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "dc.citation.issueNumber : ID"
+  },
+  "dc_citation_issueNumbers__text_original": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text original",
+    "flatlabel": "dc.citation.issueNumber : Text original"
+  },
+  "dc_citation_issueNumbers__text_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text EN",
+    "flatlabel": "dc.citation.issueNumber : Text EN"
+  },
+  "dc_citation_issueNumbers__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "dc.citation.issueNumber : Text CN"
+  },
+  "dc_citation_pageNumbers": {
+    "type": "table",
+    "label": "dc.citation.pageNumber",
+    "flatlabel": "dc.citation.pageNumber"
+  },
+  "dc_citation_pageNumbers__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "dc.citation.pageNumber : ID"
+  },
+  "dc_citation_pageNumbers__text_original": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text original",
+    "flatlabel": "dc.citation.pageNumber : Text original"
+  },
+  "dc_citation_pageNumbers__text_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text EN",
+    "flatlabel": "dc.citation.pageNumber : Text EN"
+  },
+  "dc_citation_pageNumbers__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "dc.citation.pageNumber : Text CN"
+  },
+  "dc_citation_volumeNumbers": {
+    "type": "table",
+    "label": "dc.citation.volumeNumber",
+    "flatlabel": "dc.citation.volumeNumber"
+  },
+  "dc_citation_volumeNumbers__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "dc.citation.volumeNumber : ID"
+  },
+  "dc_citation_volumeNumbers__text_original": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text original",
+    "flatlabel": "dc.citation.volumeNumber : Text original"
+  },
+  "dc_citation_volumeNumbers__text_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text EN",
+    "flatlabel": "dc.citation.volumeNumber : Text EN"
+  },
+  "dc_citation_volumeNumbers__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "dc.citation.volumeNumber : Text CN"
+  },
+  "dc_contributor_funders": {
+    "type": "table",
+    "label": "dc.contributor.funder",
+    "flatlabel": "dc.contributor.funder"
+  },
+  "dc_contributor_funders__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "dc.contributor.funder : ID"
+  },
+  "dc_contributor_funders__text_original": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text original",
+    "flatlabel": "dc.contributor.funder : Text original"
+  },
+  "dc_contributor_funders__text_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text EN",
+    "flatlabel": "dc.contributor.funder : Text EN"
+  },
+  "dc_contributor_funders__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "dc.contributor.funder : Text CN"
+  },
+  "dc_contributor_publishers": {
+    "type": "table",
+    "label": "dc.contributor.publisher",
+    "flatlabel": "dc.contributor.publisher"
+  },
+  "dc_contributor_publishers__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "dc.contributor.publisher : ID"
+  },
+  "dc_contributor_publishers__text_original": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text original",
+    "flatlabel": "dc.contributor.publisher : Text original"
+  },
+  "dc_contributor_publishers__text_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text EN",
+    "flatlabel": "dc.contributor.publisher : Text EN"
+  },
+  "dc_contributor_publishers__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "dc.contributor.publisher : Text CN"
+  },
+  "dc_date_digitals": {
+    "type": "table",
+    "label": "dc.date.digital",
+    "flatlabel": "dc.date.digital"
+  },
+  "dc_date_digitals__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "dc.date.digital : ID"
+  },
+  "dc_date_digitals__text_original": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text original",
+    "flatlabel": "dc.date.digital : Text original"
+  },
+  "dc_date_digitals__text_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text EN",
+    "flatlabel": "dc.date.digital : Text EN"
+  },
+  "dc_date_digitals__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "dc.date.digital : Text CN"
+  },
+  "dc_description_fulltexts": {
+    "type": "table",
+    "label": "dc.description.fulltext",
+    "flatlabel": "dc.description.fulltext"
+  },
+  "dc_description_fulltexts__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "dc.description.fulltext : ID"
+  },
+  "dc_description_fulltexts__text_original": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text original",
+    "flatlabel": "dc.description.fulltext : Text original"
+  },
+  "dc_description_fulltexts__text_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text EN",
+    "flatlabel": "dc.description.fulltext : Text EN"
+  },
+  "dc_description_fulltexts__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "dc.description.fulltext : Text CN"
+  },
+  "dc_description_positions": {
+    "type": "table",
+    "label": "dc.description.position",
+    "flatlabel": "dc.description.position"
+  },
+  "dc_description_positions__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "dc.description.position : ID"
+  },
+  "dc_description_positions__text_original": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text original",
+    "flatlabel": "dc.description.position : Text original"
+  },
+  "dc_description_positions__text_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text EN",
+    "flatlabel": "dc.description.position : Text EN"
+  },
+  "dc_description_positions__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "dc.description.position : Text CN"
+  },
+  "dc_relation_IsPartOfSeriess": {
+    "type": "table",
+    "label": "dc.relation.IsPartOfSeries",
+    "flatlabel": "dc.relation.IsPartOfSeries"
+  },
+  "dc_relation_IsPartOfSeriess__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "dc.relation.IsPartOfSeries : ID"
+  },
+  "dc_relation_IsPartOfSeriess__text_original": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text original",
+    "flatlabel": "dc.relation.IsPartOfSeries : Text original"
+  },
+  "dc_relation_IsPartOfSeriess__text_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text EN",
+    "flatlabel": "dc.relation.IsPartOfSeries : Text EN"
+  },
+  "dc_relation_IsPartOfSeriess__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "dc.relation.IsPartOfSeries : Text CN"
+  },
+  "dc_rightss": {
+    "type": "table",
+    "label": "dc.rights",
+    "flatlabel": "dc.rights"
+  },
+  "dc_rightss__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "dc.rights : ID"
+  },
+  "dc_rightss__text_original": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text original",
+    "flatlabel": "dc.rights : Text original"
+  },
+  "dc_rightss__text_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text EN",
+    "flatlabel": "dc.rights : Text EN"
+  },
+  "dc_rightss__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "dc.rights : Text CN"
+  },
+  "dc_rights_uris": {
+    "type": "table",
+    "label": "dc.rights.uri",
+    "flatlabel": "dc.rights.uri"
+  },
+  "dc_rights_uris__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "dc.rights.uri : ID"
+  },
+  "dc_rights_uris__text_original": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text original",
+    "flatlabel": "dc.rights.uri : Text original"
+  },
+  "dc_rights_uris__text_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text EN",
+    "flatlabel": "dc.rights.uri : Text EN"
+  },
+  "dc_rights_uris__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "dc.rights.uri : Text CN"
+  },
+  "dc_sources": {
+    "type": "table",
+    "label": "dc.source",
+    "flatlabel": "dc.source"
+  },
+  "dc_sources__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "dc.source : ID"
+  },
+  "dc_sources__text_original": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text original",
+    "flatlabel": "dc.source : Text original"
+  },
+  "dc_sources__text_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text EN",
+    "flatlabel": "dc.source : Text EN"
+  },
+  "dc_sources__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "dc.source : Text CN"
+  },
+  "dc_subject_adcats": {
+    "type": "table",
+    "label": "dc.subject.adcat",
+    "flatlabel": "dc.subject.adcat"
+  },
+  "dc_subject_adcats__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "dc.subject.adcat : ID"
+  },
+  "dc_subject_adcats__text_original": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text original",
+    "flatlabel": "dc.subject.adcat : Text original"
+  },
+  "dc_subject_adcats__text_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text EN",
+    "flatlabel": "dc.subject.adcat : Text EN"
+  },
+  "dc_subject_adcats__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "dc.subject.adcat : Text CN"
+  },
+  "dspace_iiif_enableds": {
+    "type": "table",
+    "label": "dspace.iiif.enabled",
+    "flatlabel": "dspace.iiif.enabled"
+  },
+  "dspace_iiif_enableds__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "dspace.iiif.enabled : ID"
+  },
+  "dspace_iiif_enableds__text_original": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text original",
+    "flatlabel": "dspace.iiif.enabled : Text original"
+  },
+  "dspace_iiif_enableds__text_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text EN",
+    "flatlabel": "dspace.iiif.enabled : Text EN"
+  },
+  "dspace_iiif_enableds__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "dspace.iiif.enabled : Text CN"
+  },
+  "dc_coverage_spatials": {
+    "type": "table",
+    "label": "dc.coverage.spatial",
+    "flatlabel": "dc.coverage.spatial"
+  },
+  "dc_coverage_spatials__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "dc.coverage.spatial : ID"
+  },
+  "dc_coverage_spatials__text_original": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text original",
+    "flatlabel": "dc.coverage.spatial : Text original"
+  },
+  "dc_coverage_spatials__text_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text EN",
+    "flatlabel": "dc.coverage.spatial : Text EN"
+  },
+  "dc_coverage_spatials__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "dc.coverage.spatial : Text CN"
+  },
+  "dc_date_accessioneds": {
+    "type": "table",
+    "label": "dc.date.accessioned",
+    "flatlabel": "dc.date.accessioned"
+  },
+  "dc_date_accessioneds__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "dc.date.accessioned : ID"
+  },
+  "dc_date_accessioneds__text_original": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text original",
+    "flatlabel": "dc.date.accessioned : Text original"
+  },
+  "dc_date_accessioneds__text_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text EN",
+    "flatlabel": "dc.date.accessioned : Text EN"
+  },
+  "dc_date_accessioneds__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "dc.date.accessioned : Text CN"
+  },
+  "dc_date_availables": {
+    "type": "table",
+    "label": "dc.date.available",
+    "flatlabel": "dc.date.available"
+  },
+  "dc_date_availables__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "dc.date.available : ID"
+  },
+  "dc_date_availables__text_original": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text original",
+    "flatlabel": "dc.date.available : Text original"
+  },
+  "dc_date_availables__text_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text EN",
+    "flatlabel": "dc.date.available : Text EN"
+  },
+  "dc_date_availables__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "dc.date.available : Text CN"
+  },
+  "dc_date_createds": {
+    "type": "table",
+    "label": "dc.date.created",
+    "flatlabel": "dc.date.created"
+  },
+  "dc_date_createds__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "dc.date.created : ID"
+  },
+  "dc_date_createds__text_original": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text original",
+    "flatlabel": "dc.date.created : Text original"
+  },
+  "dc_date_createds__text_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text EN",
+    "flatlabel": "dc.date.created : Text EN"
+  },
+  "dc_date_createds__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "dc.date.created : Text CN"
+  },
+  "dc_date_issueds": {
+    "type": "table",
+    "label": "dc.date.issued",
+    "flatlabel": "dc.date.issued"
+  },
+  "dc_date_issueds__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "dc.date.issued : ID"
+  },
+  "dc_date_issueds__text_original": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text original",
+    "flatlabel": "dc.date.issued : Text original"
+  },
+  "dc_date_issueds__text_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text EN",
+    "flatlabel": "dc.date.issued : Text EN"
+  },
+  "dc_date_issueds__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "dc.date.issued : Text CN"
+  },
+  "dc_descriptions": {
+    "type": "table",
+    "label": "dc.description",
+    "flatlabel": "dc.description"
+  },
+  "dc_descriptions__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "dc.description : ID"
+  },
+  "dc_descriptions__text_original": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text original",
+    "flatlabel": "dc.description : Text original"
+  },
+  "dc_descriptions__text_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text EN",
+    "flatlabel": "dc.description : Text EN"
+  },
+  "dc_descriptions__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "dc.description : Text CN"
+  },
+  "dc_description_provenances": {
+    "type": "table",
+    "label": "dc.description.provenance",
+    "flatlabel": "dc.description.provenance"
+  },
+  "dc_description_provenances__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "dc.description.provenance : ID"
+  },
+  "dc_description_provenances__text_original": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text original",
+    "flatlabel": "dc.description.provenance : Text original"
+  },
+  "dc_description_provenances__text_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text EN",
+    "flatlabel": "dc.description.provenance : Text EN"
+  },
+  "dc_description_provenances__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "dc.description.provenance : Text CN"
+  },
+  "dc_digitization_specificationss": {
+    "type": "table",
+    "label": "dc.digitization.specifications",
+    "flatlabel": "dc.digitization.specifications"
+  },
+  "dc_digitization_specificationss__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "dc.digitization.specifications : ID"
+  },
+  "dc_digitization_specificationss__text_original": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text original",
+    "flatlabel": "dc.digitization.specifications : Text original"
+  },
+  "dc_digitization_specificationss__text_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text EN",
+    "flatlabel": "dc.digitization.specifications : Text EN"
+  },
+  "dc_digitization_specificationss__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "dc.digitization.specifications : Text CN"
+  },
+  "dc_format_mediums": {
+    "type": "table",
+    "label": "dc.format.medium",
+    "flatlabel": "dc.format.medium"
+  },
+  "dc_format_mediums__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "dc.format.medium : ID"
+  },
+  "dc_format_mediums__text_original": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text original",
+    "flatlabel": "dc.format.medium : Text original"
+  },
+  "dc_format_mediums__text_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text EN",
+    "flatlabel": "dc.format.medium : Text EN"
+  },
+  "dc_format_mediums__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "dc.format.medium : Text CN"
+  },
+  "dc_identifier_digitals": {
+    "type": "table",
+    "label": "dc.identifier.digital",
+    "flatlabel": "dc.identifier.digital"
+  },
+  "dc_identifier_digitals__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "dc.identifier.digital : ID"
+  },
+  "dc_identifier_digitals__text_original": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text original",
+    "flatlabel": "dc.identifier.digital : Text original"
+  },
+  "dc_identifier_digitals__text_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text EN",
+    "flatlabel": "dc.identifier.digital : Text EN"
+  },
+  "dc_identifier_digitals__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "dc.identifier.digital : Text CN"
+  },
+  "dc_identifier_uris": {
+    "type": "table",
+    "label": "dc.identifier.uri",
+    "flatlabel": "dc.identifier.uri"
+  },
+  "dc_identifier_uris__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "dc.identifier.uri : ID"
+  },
+  "dc_identifier_uris__text_original": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text original",
+    "flatlabel": "dc.identifier.uri : Text original"
+  },
+  "dc_identifier_uris__text_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text EN",
+    "flatlabel": "dc.identifier.uri : Text EN"
+  },
+  "dc_identifier_uris__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "dc.identifier.uri : Text CN"
+  },
+  "dc_language_isos": {
+    "type": "table",
+    "label": "dc.language.iso",
+    "flatlabel": "dc.language.iso"
+  },
+  "dc_language_isos__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "dc.language.iso : ID"
+  },
+  "dc_language_isos__text_original": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text original",
+    "flatlabel": "dc.language.iso : Text original"
+  },
+  "dc_language_isos__text_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text EN",
+    "flatlabel": "dc.language.iso : Text EN"
+  },
+  "dc_language_isos__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "dc.language.iso : Text CN"
+  },
+  "dc_publishers": {
+    "type": "table",
+    "label": "dc.publisher",
+    "flatlabel": "dc.publisher"
+  },
+  "dc_publishers__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "dc.publisher : ID"
+  },
+  "dc_publishers__text_original": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text original",
+    "flatlabel": "dc.publisher : Text original"
+  },
+  "dc_publishers__text_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text EN",
+    "flatlabel": "dc.publisher : Text EN"
+  },
+  "dc_publishers__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "dc.publisher : Text CN"
+  },
+  "dc_source_collections": {
+    "type": "table",
+    "label": "dc.source.collection",
+    "flatlabel": "dc.source.collection"
+  },
+  "dc_source_collections__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "dc.source.collection : ID"
+  },
+  "dc_source_collections__text_original": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text original",
+    "flatlabel": "dc.source.collection : Text original"
+  },
+  "dc_source_collections__text_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text EN",
+    "flatlabel": "dc.source.collection : Text EN"
+  },
+  "dc_source_collections__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "dc.source.collection : Text CN"
+  },
+  "dc_subjects": {
+    "type": "table",
+    "label": "dc.subject",
+    "flatlabel": "dc.subject"
+  },
+  "dc_subjects__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "dc.subject : ID"
+  },
+  "dc_subjects__text_original": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text original",
+    "flatlabel": "dc.subject : Text original"
+  },
+  "dc_subjects__text_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text EN",
+    "flatlabel": "dc.subject : Text EN"
+  },
+  "dc_subjects__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "dc.subject : Text CN"
+  },
+  "dc_subject_brands": {
+    "type": "table",
+    "label": "dc.subject.brand",
+    "flatlabel": "dc.subject.brand"
+  },
+  "dc_subject_brands__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "dc.subject.brand : ID"
+  },
+  "dc_subject_brands__text_original": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text original",
+    "flatlabel": "dc.subject.brand : Text original"
+  },
+  "dc_subject_brands__text_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text EN",
+    "flatlabel": "dc.subject.brand : Text EN"
+  },
+  "dc_subject_brands__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "dc.subject.brand : Text CN"
+  },
+  "dc_subject_prodcats": {
+    "type": "table",
+    "label": "dc.subject.prodcat",
+    "flatlabel": "dc.subject.prodcat"
+  },
+  "dc_subject_prodcats__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "dc.subject.prodcat : ID"
+  },
+  "dc_subject_prodcats__text_original": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text original",
+    "flatlabel": "dc.subject.prodcat : Text original"
+  },
+  "dc_subject_prodcats__text_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text EN",
+    "flatlabel": "dc.subject.prodcat : Text EN"
+  },
+  "dc_subject_prodcats__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "dc.subject.prodcat : Text CN"
+  },
+  "dc_subject_prodtypes": {
+    "type": "table",
+    "label": "dc.subject.prodtype",
+    "flatlabel": "dc.subject.prodtype"
+  },
+  "dc_subject_prodtypes__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "dc.subject.prodtype : ID"
+  },
+  "dc_subject_prodtypes__text_original": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text original",
+    "flatlabel": "dc.subject.prodtype : Text original"
+  },
+  "dc_subject_prodtypes__text_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text EN",
+    "flatlabel": "dc.subject.prodtype : Text EN"
+  },
+  "dc_subject_prodtypes__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "dc.subject.prodtype : Text CN"
+  },
+  "dc_titles": {
+    "type": "table",
+    "label": "dc.title",
+    "flatlabel": "dc.title"
+  },
+  "dc_titles__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "dc.title : ID"
+  },
+  "dc_titles__text_original": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text original",
+    "flatlabel": "dc.title : Text original"
+  },
+  "dc_titles__text_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text EN",
+    "flatlabel": "dc.title : Text EN"
+  },
+  "dc_titles__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "dc.title : Text CN"
+  },
+  "dc_title_subtitles": {
+    "type": "table",
+    "label": "dc.title.subtitle",
+    "flatlabel": "dc.title.subtitle"
+  },
+  "dc_title_subtitles__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "dc.title.subtitle : ID"
+  },
+  "dc_title_subtitles__text_original": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text original",
+    "flatlabel": "dc.title.subtitle : Text original"
+  },
+  "dc_title_subtitles__text_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text EN",
+    "flatlabel": "dc.title.subtitle : Text EN"
+  },
+  "dc_title_subtitles__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "dc.title.subtitle : Text CN"
+  },
+  "dc_type_dcmis": {
+    "type": "table",
+    "label": "dc.type.dcmi",
+    "flatlabel": "dc.type.dcmi"
+  },
+  "dc_type_dcmis__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "dc.type.dcmi : ID"
+  },
+  "dc_type_dcmis__text_original": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text original",
+    "flatlabel": "dc.type.dcmi : Text original"
+  },
+  "dc_type_dcmis__text_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text EN",
+    "flatlabel": "dc.type.dcmi : Text EN"
+  },
+  "dc_type_dcmis__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "dc.type.dcmi : Text CN"
+  },
+  "dc_type_genres": {
+    "type": "table",
+    "label": "dc.type.genre",
+    "flatlabel": "dc.type.genre"
+  },
+  "dc_type_genres__id": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "ID",
+    "flatlabel": "dc.type.genre : ID"
+  },
+  "dc_type_genres__text_original": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text original",
+    "flatlabel": "dc.type.genre : Text original"
+  },
+  "dc_type_genres__text_EN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text EN",
+    "flatlabel": "dc.type.genre : Text EN"
+  },
+  "dc_type_genres__text_CN": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Text CN",
+    "flatlabel": "dc.type.genre : Text CN"
+  },
+  "pub_year": {
+    "type": "<class 'rest_framework.fields.IntegerField'>",
+    "label": "Pub year",
+    "flatlabel": "Pub year"
+  },
+  "uuid": {
+    "type": "<class 'rest_framework.fields.CharField'>",
+    "label": "Uuid",
+    "flatlabel": "Uuid"
   },
   "dspace_uri": {
     "type": "<class 'rest_framework.fields.URLField'>",
@@ -144,24 +1124,19 @@
     "label": "Dspace iiif uri",
     "flatlabel": "Dspace iiif uri"
   },
-  "uid": {
-    "type": "<class 'rest_framework.fields.CharField'>",
-    "label": "Uid",
-    "flatlabel": "Uid"
+  "iiif_enabled": {
+    "type": "<class 'rest_framework.fields.BooleanField'>",
+    "label": "Iiif enabled",
+    "flatlabel": "Iiif enabled"
   },
-  "pub_year": {
-    "type": "<class 'rest_framework.fields.IntegerField'>",
-    "label": "Pub year",
-    "flatlabel": "Pub year"
+  "is_current": {
+    "type": "<class 'rest_framework.fields.BooleanField'>",
+    "label": "Is current",
+    "flatlabel": "Is current"
   },
-  "subtitle_EN": {
-    "type": "<class 'rest_framework.fields.CharField'>",
-    "label": "Subtitle EN",
-    "flatlabel": "Subtitle EN"
-  },
-  "subtitle_CN": {
-    "type": "<class 'rest_framework.fields.CharField'>",
-    "label": "Subtitle CN",
-    "flatlabel": "Subtitle CN"
+  "owning_collection": {
+    "type": "<class 'rest_framework.relations.PrimaryKeyRelatedField'>",
+    "label": "Owning collection",
+    "flatlabel": "Owning collection"
   }
 }

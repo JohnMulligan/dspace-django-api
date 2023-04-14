@@ -6,26 +6,26 @@ from ads.models import *
 import time
 from subway_ads.localsettings import *
 from .tools.authenticate import authenticate
-from .tools.update_local_item import *
+from .tools.local_items import *
 
 class Command(BaseCommand):
-	help = 'rebuilds the options flatfiles'
+	help = 'pulls the json for a single dspace entity'
 
 	def add_arguments(self, parser):
 		parser.add_argument(
-			"endpoint",
+			"--path",
 			type=str,
 			nargs='?',
-			default=None,
-			help="api endpoint"
+			default='',
+			help="Str: the fully-qualified path off the api endpoint, eg 'items/d2c9722d-af15-4a36-a01c-c12338f26b47' or just 'collections'"
 		)
 
 		parser.add_argument(
-			"update",
+			"--update",
 			type=bool,
 			nargs='?',
 			default=False,
-			help="update true or false"
+			help="Boolean: update the item you're pinging. default=False"
 		)
 
 	def handle(self, *args, **options):
@@ -33,14 +33,14 @@ class Command(BaseCommand):
 		# & the base serializer & object class we're feeding into it.
 		auth_headers=authenticate()
 		
-		endpoint=options['endpoint']
+		path=options['path']
 		
-		if endpoint is not None:
-			endpoint='/'+endpoint
+		if path is not None:
+			path='core/'+path
 		else:
-			endpoint=''
+			path=''
 				
-		concat_url=base_dspace_api_url + endpoint
+		concat_url=base_dspace_api_url + path
 		
 		print("-------------\nfetching url\n",concat_url,"\n--------------")
 
