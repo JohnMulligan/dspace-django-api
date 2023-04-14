@@ -47,11 +47,8 @@ class PublishedDcDateDigitalInLine(admin.TabularInline):
 	verbose_name_plural='dc.date.digital'
 	classes=['collapse']
 	model=PublishedAdvertisement.dc_date_digitals.through
-class PublishedChaoCompanyNameInLine(admin.TabularInline):
 	extra=0
-	verbose_name_plural='chao.company.name'
 	classes=['collapse']
-	model=PublishedAdvertisement.chao_company_names.through
 class StagedDcRelationIspartofseriesInLine(admin.TabularInline):
 	extra=0
 	verbose_name_plural='dc.relation.IsPartOfSeries'
@@ -62,21 +59,15 @@ class PublishedDcDateCreatedInLine(admin.TabularInline):
 	verbose_name_plural='dc.date.created'
 	classes=['collapse']
 	model=PublishedAdvertisement.dc_date_createds.through
-class StagedChaoCompanyAddressInLine(admin.TabularInline):
 	extra=0
-	verbose_name_plural='chao.company.address'
 	classes=['collapse']
-	model=StagedAdvertisement.chao_company_addresss.through
 class PublishedDcSubjectProdcatInLine(admin.TabularInline):
 	extra=0
 	verbose_name_plural='dc.subject.prodcat'
 	classes=['collapse']
 	model=PublishedAdvertisement.dc_subject_prodcats.through
-class StagedChaoDateMinguoInLine(admin.TabularInline):
 	extra=0
-	verbose_name_plural='chao.date.minguo'
 	classes=['collapse']
-	model=StagedAdvertisement.chao_date_minguos.through
 class StagedDcLanguageIsoInLine(admin.TabularInline):
 	extra=0
 	verbose_name_plural='dc.language.iso'
@@ -97,11 +88,8 @@ class StagedDcDateDigitalInLine(admin.TabularInline):
 	verbose_name_plural='dc.date.digital'
 	classes=['collapse']
 	model=StagedAdvertisement.dc_date_digitals.through
-class PublishedChaoCompanyAddressInLine(admin.TabularInline):
 	extra=0
-	verbose_name_plural='chao.company.address'
 	classes=['collapse']
-	model=PublishedAdvertisement.chao_company_addresss.through
 class PublishedDspaceIiifEnabledInLine(admin.TabularInline):
 	extra=0
 	verbose_name_plural='dspace.iiif.enabled'
@@ -132,11 +120,8 @@ class StagedDcSubjectProdcatInLine(admin.TabularInline):
 	verbose_name_plural='dc.subject.prodcat'
 	classes=['collapse']
 	model=StagedAdvertisement.dc_subject_prodcats.through
-class PublishedChaoCompanyNationInLine(admin.TabularInline):
 	extra=0
-	verbose_name_plural='chao.company.nation'
 	classes=['collapse']
-	model=PublishedAdvertisement.chao_company_nations.through
 class StagedDcCoverageSpatialInLine(admin.TabularInline):
 	extra=0
 	verbose_name_plural='dc.coverage.spatial'
@@ -157,11 +142,8 @@ class PublishedDcTypeDcmiInLine(admin.TabularInline):
 	verbose_name_plural='dc.type.dcmi'
 	classes=['collapse']
 	model=PublishedAdvertisement.dc_type_dcmis.through
-class PublishedChaoProductagencyInLine(admin.TabularInline):
 	extra=0
-	verbose_name_plural='chao.productagency'
 	classes=['collapse']
-	model=PublishedAdvertisement.chao_productagencys.through
 class StagedDcSubjectProdtypeInLine(admin.TabularInline):
 	extra=0
 	verbose_name_plural='dc.subject.prodtype'
@@ -187,16 +169,10 @@ class PublishedDcRelationIspartofseriesInLine(admin.TabularInline):
 	verbose_name_plural='dc.relation.IsPartOfSeries'
 	classes=['collapse']
 	model=PublishedAdvertisement.dc_relation_IsPartOfSeriess.through
-class StagedChaoProductagencyInLine(admin.TabularInline):
 	extra=0
-	verbose_name_plural='chao.productagency'
 	classes=['collapse']
-	model=StagedAdvertisement.chao_productagencys.through
-class PublishedChaoPrinterCheifeditorInLine(admin.TabularInline):
 	extra=0
-	verbose_name_plural='chao.printer.cheifeditor'
 	classes=['collapse']
-	model=PublishedAdvertisement.chao_printer_cheifeditors.through
 class PublishedDcSubjectBrandInLine(admin.TabularInline):
 	extra=0
 	verbose_name_plural='dc.subject.brand'
@@ -242,26 +218,17 @@ class StagedDcDescriptionProvenanceInLine(admin.TabularInline):
 	verbose_name_plural='dc.description.provenance'
 	classes=['collapse']
 	model=StagedAdvertisement.dc_description_provenances.through
-class PublishedChaoDateChineselunarInLine(admin.TabularInline):
 	extra=0
-	verbose_name_plural='chao.date.chineselunar'
 	classes=['collapse']
-	model=PublishedAdvertisement.chao_date_chineselunars.through
 class PublishedDcRightsUriInLine(admin.TabularInline):
 	extra=0
 	verbose_name_plural='dc.rights.uri'
 	classes=['collapse']
 	model=PublishedAdvertisement.dc_rights_uris.through
-class StagedChaoContributorPrinterInLine(admin.TabularInline):
 	extra=0
-	verbose_name_plural='chao.contributor.printer'
 	classes=['collapse']
-	model=StagedAdvertisement.chao_contributor_printers.through
-class PublishedChaoDateMinguoInLine(admin.TabularInline):
 	extra=0
-	verbose_name_plural='chao.date.minguo'
 	classes=['collapse']
-	model=PublishedAdvertisement.chao_date_minguos.through
 class PublishedDcSourceCollectionInLine(admin.TabularInline):
 	extra=0
 	verbose_name_plural='dc.source.collection'
@@ -366,36 +333,24 @@ class StagedDcDateAccessionedInLine(admin.TabularInline):
 	verbose_name_plural='dc.date.accessioned'
 	classes=['collapse']
 	model=StagedAdvertisement.dc_date_accessioneds.through
-class StagedChaoCompanyNationInLine(admin.TabularInline):
 	extra=0
-	verbose_name_plural='chao.company.nation'
 	classes=['collapse']
-	model=StagedAdvertisement.chao_company_nations.through
 class StagedDcTitleInLine(admin.TabularInline):
 	extra=0
 	verbose_name_plural='dc.title'
 	classes=['collapse']
 	model=StagedAdvertisement.dc_titles.through
-class StagedChaoDateChineselunarInLine(admin.TabularInline):
 	extra=0
-	verbose_name_plural='chao.date.chineselunar'
 	classes=['collapse']
-	model=StagedAdvertisement.chao_date_chineselunars.through
-class StagedChaoCompanyNameInLine(admin.TabularInline):
 	extra=0
-	verbose_name_plural='chao.company.name'
 	classes=['collapse']
-	model=StagedAdvertisement.chao_company_names.through
 class PublishedDcCitationIssuenumberInLine(admin.TabularInline):
 	extra=0
 	verbose_name_plural='dc.citation.issueNumber'
 	classes=['collapse']
 	model=PublishedAdvertisement.dc_citation_issueNumbers.through
-class PublishedChaoContributorPrinterInLine(admin.TabularInline):
 	extra=0
-	verbose_name_plural='chao.contributor.printer'
 	classes=['collapse']
-	model=PublishedAdvertisement.chao_contributor_printers.through
 class StagedDcDescriptionPositionInLine(admin.TabularInline):
 	extra=0
 	verbose_name_plural='dc.description.position'
@@ -406,11 +361,8 @@ class StagedDcIdentifierDigitalInLine(admin.TabularInline):
 	verbose_name_plural='dc.identifier.digital'
 	classes=['collapse']
 	model=StagedAdvertisement.dc_identifier_digitals.through
-class StagedChaoPrinterCheifeditorInLine(admin.TabularInline):
 	extra=0
-	verbose_name_plural='chao.printer.cheifeditor'
 	classes=['collapse']
-	model=StagedAdvertisement.chao_printer_cheifeditors.through
 class PublishedDcIdentifierDigitalInLine(admin.TabularInline):
 	extra=0
 	verbose_name_plural='dc.identifier.digital'
@@ -445,14 +397,6 @@ class StagedDcTitleSubtitleInLine(admin.TabularInline):
 	
 class PublishedAdvertisementAdmin(admin.ModelAdmin):
 	inlines=(
-		PublishedChaoCompanyAddressInLine,
-		PublishedChaoCompanyNameInLine,
-		PublishedChaoCompanyNationInLine,
-		PublishedChaoContributorPrinterInLine,
-		PublishedChaoDateChineselunarInLine,
-		PublishedChaoDateMinguoInLine,
-		PublishedChaoPrinterCheifeditorInLine,
-		PublishedChaoProductagencyInLine,
 		PublishedDcCitationIssuenumberInLine,
 		PublishedDcCitationPagenumberInLine,
 		PublishedDcCitationVolumenumberInLine,
@@ -523,14 +467,6 @@ class StagedAdvertisementAdmin(admin.ModelAdmin):
 	inlines=(
 		StagedPhotoInLine,
 		StagedDcDescriptionFulltextInLine,
-		StagedChaoCompanyAddressInLine,
-		StagedChaoCompanyNameInLine,
-		StagedChaoCompanyNationInLine,
-		StagedChaoContributorPrinterInLine,
-		StagedChaoDateChineselunarInLine,
-		StagedChaoDateMinguoInLine,
-		StagedChaoPrinterCheifeditorInLine,
-		StagedChaoProductagencyInLine,
 		StagedDcCitationIssuenumberInLine,
 		StagedDcCitationPagenumberInLine,
 		StagedDcCitationVolumenumberInLine,
