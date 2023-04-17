@@ -37,9 +37,6 @@ class BilingualTextFieldAbstractBase(models.Model):
 class DcPublisher(BilingualShortFieldAbstractBase):
 	class Meta:
 		verbose_name='dc.publisher'
-class DcCitationIssuenumber(BilingualShortFieldAbstractBase):
-	class Meta:
-		verbose_name='dc.citation.issueNumber'
 class DcDescriptionProvenance(BilingualTextFieldAbstractBase):
 	class Meta:
 		verbose_name='dc.description.provenance'
@@ -52,36 +49,18 @@ class DcDateCreated(BilingualShortFieldAbstractBase):
 class DcDateAvailable(BilingualShortFieldAbstractBase):
 	class Meta:
 		verbose_name='dc.date.available'
-class DcDateDigital(BilingualShortFieldAbstractBase):
-	class Meta:
-		verbose_name='dc.date.digital'
-class DcRights(BilingualShortFieldAbstractBase):
-	class Meta:
-		verbose_name='dc.rights'
-class DcCitationVolumenumber(BilingualShortFieldAbstractBase):
-	class Meta:
-		verbose_name='dc.citation.volumeNumber'
 class DcDescriptionFulltext(BilingualTextFieldAbstractBase):
 	class Meta:
 		verbose_name='dc.description.fulltext'
 class DcDateAccessioned(BilingualTextFieldAbstractBase):
 	class Meta:
 		verbose_name='dc.date.accessioned'
-class DcSource(BilingualShortFieldAbstractBase):
-	class Meta:
-		verbose_name='dc.source'
-class DcCitationPagenumber(BilingualShortFieldAbstractBase):
-	class Meta:
-		verbose_name='dc.citation.pageNumber'
 class DcTypeGenre(BilingualShortFieldAbstractBase):
 	class Meta:
 		verbose_name='dc.type.genre'
 class DcSourceCollection(BilingualShortFieldAbstractBase):
 	class Meta:
 		verbose_name='dc.source.collection'
-class DcContributorPublisher(BilingualShortFieldAbstractBase):
-	class Meta:
-		verbose_name='dc.contributor.publisher'
 class ChaoCompanyAddress(BilingualShortFieldAbstractBase):
 	class Meta:
 		verbose_name='chao.company.address'
@@ -109,9 +88,6 @@ class ChaoCompanyNation(BilingualShortFieldAbstractBase):
 class DcSubjectProdtype(BilingualShortFieldAbstractBase):
 	class Meta:
 		verbose_name='dc.subject.prodtype'
-class DcRightsUri(BilingualTextFieldAbstractBase):
-	class Meta:
-		verbose_name='dc.rights.uri'
 class DcTitle(BilingualShortFieldAbstractBase):
 	class Meta:
 		verbose_name='dc.title'
@@ -127,18 +103,9 @@ class DcDescription(BilingualShortFieldAbstractBase):
 class DcFormatMedium(BilingualShortFieldAbstractBase):
 	class Meta:
 		verbose_name='dc.format.medium'
-class DcDescriptionPosition(BilingualShortFieldAbstractBase):
-	class Meta:
-		verbose_name='dc.description.position'
-class DcSubjectAdcat(BilingualShortFieldAbstractBase):
-	class Meta:
-		verbose_name='dc.subject.adcat'
 class DcSubjectBrand(BilingualShortFieldAbstractBase):
 	class Meta:
 		verbose_name='dc.subject.brand'
-class DcRelationIspartofseries(BilingualTextFieldAbstractBase):
-	class Meta:
-		verbose_name='dc.relation.IsPartOfSeries'
 class DcIdentifierUri(BilingualShortFieldAbstractBase):
 	class Meta:
 		verbose_name='dc.identifier.uri'
@@ -151,9 +118,6 @@ class ChaoDateMinguo(BilingualShortFieldAbstractBase):
 class DcSubject(BilingualShortFieldAbstractBase):
 	class Meta:
 		verbose_name='dc.subject'
-class DcContributorFunder(BilingualShortFieldAbstractBase):
-	class Meta:
-		verbose_name='dc.contributor.funder'
 class DcLanguageIso(BilingualShortFieldAbstractBase):
 	class Meta:
 		verbose_name='dc.language.iso'
